@@ -1,4 +1,4 @@
-1505329409a:1:{s:11:"default.htm";a:6:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1613:"description = "Default layout"
+1505332139a:1:{s:11:"default.htm";a:6:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1205:"description = "Default layout"
 ==
 <!DOCTYPE html>
 <html>
@@ -10,26 +10,32 @@
         <meta name="author" content="OctoberCMS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="OctoberCMS">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<!-- 		<link href="{{ 'assets/css/bootstrap.css'|theme }}" rel="stylesheet"> -->
 		<link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
         {% styles %}
     </head>
     <body>
+
+		<!-- Sidebar -->
+        <section id="layout-content">
+        	{% partial "sidebar" %}
+        </section>
 
         <!-- Content -->
         <section id="layout-content">
             {% page %}
         </section>
 
+
         <!-- Scripts -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+        <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
         {% framework extras %}
         {% scripts %}
 
     </body>
-</html>";s:5:"mtime";i:1505328808;s:6:"markup";s:1579:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1505331521;s:6:"markup";s:1171:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -39,21 +45,27 @@
         <meta name="author" content="OctoberCMS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="OctoberCMS">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<!-- 		<link href="{{ 'assets/css/bootstrap.css'|theme }}" rel="stylesheet"> -->
 		<link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
         {% styles %}
     </head>
     <body>
+
+		<!-- Sidebar -->
+        <section id="layout-content">
+        	{% partial "sidebar" %}
+        </section>
 
         <!-- Content -->
         <section id="layout-content">
             {% page %}
         </section>
 
+
         <!-- Scripts -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+        <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
         {% framework extras %}
         {% scripts %}
 

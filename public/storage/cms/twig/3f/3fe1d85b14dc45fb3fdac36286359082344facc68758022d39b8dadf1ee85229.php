@@ -15,8 +15,6 @@ class __TwigTemplate_9eac9ef11d3b029f2cf6d5049320b8efbe54a9b7b3d6b1d43f798d7740f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
-        echo "<h2 class=\"testOne\">Lorem ipsum dolor.</h2>";
     }
 
     public function getTemplateName()
@@ -26,7 +24,7 @@ class __TwigTemplate_9eac9ef11d3b029f2cf6d5049320b8efbe54a9b7b3d6b1d43f798d7740f
 
     public function getDebugInfo()
     {
-        return array (  19 => 1,);
+        return array ();
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -39,6 +37,6 @@ class __TwigTemplate_9eac9ef11d3b029f2cf6d5049320b8efbe54a9b7b3d6b1d43f798d7740f
 
     public function getSourceContext()
     {
-        return new Twig_Source("<h2 class=\"testOne\">Lorem ipsum dolor.</h2>", "/var/www/public/themes/test/pages/home.htm", "");
+        return new Twig_Source("", "/var/www/public/themes/test/pages/home.htm", "");
     }
 }

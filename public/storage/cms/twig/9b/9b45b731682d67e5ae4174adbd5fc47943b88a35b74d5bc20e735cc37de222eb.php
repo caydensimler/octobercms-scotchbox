@@ -35,7 +35,10 @@ class __TwigTemplate_85a7e055e276ef9ffff4fef8a0fa1744d2f8dfc885fe732fd9fac7f8d59
         <meta name=\"author\" content=\"OctoberCMS\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <meta name=\"generator\" content=\"OctoberCMS\">
-\t\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">
+<!-- \t\t<link href=\"";
+        // line 11
+        echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/css/bootstrap.css");
+        echo "\" rel=\"stylesheet\"> -->
 \t\t<link href=\"";
         // line 12
         echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/css/theme.css");
@@ -48,31 +51,51 @@ class __TwigTemplate_85a7e055e276ef9ffff4fef8a0fa1744d2f8dfc885fe732fd9fac7f8d59
         echo "    </head>
     <body>
 
-        <!-- Content -->
+\t\t<!-- Sidebar -->
         <section id=\"layout-content\">
-            ";
+        \t";
         // line 19
-        echo $this->env->getExtension('CMS')->pageFunction();
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('CMS')->partialFunction("sidebar"        , $context['__cms_partial_params']        );
+        unset($context['__cms_partial_params']);
         // line 20
         echo "        </section>
 
+        <!-- Content -->
+        <section id=\"layout-content\">
+            ";
+        // line 24
+        echo $this->env->getExtension('CMS')->pageFunction();
+        // line 25
+        echo "        </section>
+
+
         <!-- Scripts -->
-\t\t<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
-\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js\" integrity=\"sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4\" crossorigin=\"anonymous\"></script>
-\t\t<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js\" integrity=\"sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1\" crossorigin=\"anonymous\"></script>
+        <script src=\"";
+        // line 29
+        echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/vendor/jquery.js");
+        echo "\"></script>
+        <script src=\"";
+        // line 30
+        echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/vendor/bootstrap.js");
+        echo "\"></script>
+        <script src=\"";
+        // line 31
+        echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/javascript/app.js");
+        echo "\"></script>
         ";
-        // line 26
+        // line 32
         echo '<script src="'. Request::getBasePath()
                 .'/modules/system/assets/js/framework.js"></script>'.PHP_EOL;
         echo '<script src="'. Request::getBasePath()
                     .'/modules/system/assets/js/framework.extras.js"></script>'.PHP_EOL;
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras.css">'.PHP_EOL;
-        // line 27
+        // line 33
         echo "        ";
         echo $this->env->getExtension('CMS')->assetsFunction('js');
         echo $this->env->getExtension('CMS')->displayBlock('scripts');
-        // line 28
+        // line 34
         echo "
     </body>
 </html>";
@@ -90,7 +113,7 @@ class __TwigTemplate_85a7e055e276ef9ffff4fef8a0fa1744d2f8dfc885fe732fd9fac7f8d59
 
     public function getDebugInfo()
     {
-        return array (  76 => 28,  72 => 27,  65 => 26,  57 => 20,  55 => 19,  48 => 14,  45 => 13,  41 => 12,  33 => 7,  29 => 6,  25 => 5,  19 => 1,);
+        return array (  99 => 34,  95 => 33,  88 => 32,  84 => 31,  80 => 30,  76 => 29,  70 => 25,  68 => 24,  62 => 20,  58 => 19,  51 => 14,  48 => 13,  44 => 12,  40 => 11,  33 => 7,  29 => 6,  25 => 5,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -113,21 +136,27 @@ class __TwigTemplate_85a7e055e276ef9ffff4fef8a0fa1744d2f8dfc885fe732fd9fac7f8d59
         <meta name=\"author\" content=\"OctoberCMS\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <meta name=\"generator\" content=\"OctoberCMS\">
-\t\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">
+<!-- \t\t<link href=\"{{ 'assets/css/bootstrap.css'|theme }}\" rel=\"stylesheet\"> -->
 \t\t<link href=\"{{ 'assets/css/theme.css'|theme }}\" rel=\"stylesheet\">
         {% styles %}
     </head>
     <body>
+
+\t\t<!-- Sidebar -->
+        <section id=\"layout-content\">
+        \t{% partial \"sidebar\" %}
+        </section>
 
         <!-- Content -->
         <section id=\"layout-content\">
             {% page %}
         </section>
 
+
         <!-- Scripts -->
-\t\t<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
-\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js\" integrity=\"sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4\" crossorigin=\"anonymous\"></script>
-\t\t<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js\" integrity=\"sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1\" crossorigin=\"anonymous\"></script>
+        <script src=\"{{ 'assets/vendor/jquery.js'|theme }}\"></script>
+        <script src=\"{{ 'assets/vendor/bootstrap.js'|theme }}\"></script>
+        <script src=\"{{ 'assets/javascript/app.js'|theme }}\"></script>
         {% framework extras %}
         {% scripts %}
 
