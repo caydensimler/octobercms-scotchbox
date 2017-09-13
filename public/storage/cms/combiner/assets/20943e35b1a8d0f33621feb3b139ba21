@@ -1,0 +1,48 @@
+.blog .post {
+  position: relative;
+  padding: 20px;
+  flex-basis: auto;
+}
+.blog .post__category {
+  font-size: .8rem;
+  text-transform: uppercase;
+}
+.blog .post__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 20px 0 10px;
+}
+.blog .post__content {
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+}
+.blog .post__category,
+.blog .post__permalink {
+  color: #4a4a4a;
+  text-decoration: underline;
+}
+.blog .post__permalink {
+  position: absolute;
+  bottom: 20px;
+}
+.blog .fb-auto {
+  flex-basis: auto;
+}
+.blog .pink {
+  background: #ffdae0;
+}
+.blog .gray {
+  background: #e7f0da;
+}
+.blog .green {
+  background: #ddebd0;
+}
+.blog .gold {
+  background: #fcf5b6;
+}
+.blog .blue {
+  background: #cae9ef;
+}
+.blog .red {
+  background: #f8c9c1;
+}
