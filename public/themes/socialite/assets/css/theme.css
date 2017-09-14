@@ -1,0 +1,9 @@
+/* NAVBAR */
+	.navbarMain {
+		background-color: #383836;
+		height: 100px;
+	}
+
+	.signOutLink a {
+		color: white;
+	}

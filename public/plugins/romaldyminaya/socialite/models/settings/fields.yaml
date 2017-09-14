@@ -1,0 +1,168 @@
+# ===================================
+#  Field Definitions
+# ===================================
+fields:
+    automatic_redirect:
+        type: switch
+        span: auto
+        label: romaldyminaya.socialite::lang.settings.automatic_label
+        comment: romaldyminaya.socialite::lang.settings.automatic_comment
+    logged_in_redirect:
+        type: dropdown
+        span: auto
+        label: romaldyminaya.socialite::lang.settings.redirect_label
+        comment: romaldyminaya.socialite::lang.settings.redirect_comment
+        trigger:
+            action: disable
+            field: automatic_redirect
+            condition: checked
+
+tabs:
+    fields:
+
+        # Facebook
+        facebook[callback_url]:
+            label: romaldyminaya.socialite::lang.settings.callback_url_label
+            comment: romaldyminaya.socialite::lang.settings.callback_url_comment
+            type: text
+            tab: romaldyminaya.socialite::lang.settings.facebook_tab
+            attributes: { readonly: "readonly" }
+        facebook[client_id]:
+            span: auto
+            label: romaldyminaya.socialite::lang.settings.client_id_label
+            commentAbove: romaldyminaya.socialite::lang.settings.client_id_comment
+            type: text
+            tab: romaldyminaya.socialite::lang.settings.facebook_tab
+            trigger:
+                action: enable
+                field: facebook[is_activated]
+                condition: checked
+        facebook[client_secret]:
+            span: auto
+            label: romaldyminaya.socialite::lang.settings.client_secret_label
+            commentAbove: romaldyminaya.socialite::lang.settings.client_secret_comment
+            type: text
+            tab: romaldyminaya.socialite::lang.settings.facebook_tab
+            trigger:
+                action: enable
+                field: facebook[is_activated]
+                condition: checked
+        facebook[is_activated]:
+            span: auto
+            label: romaldyminaya.socialite::lang.settings.activated
+            commentAbove: romaldyminaya.socialite::lang.settings.activated_comment
+            type: switch
+            tab: romaldyminaya.socialite::lang.settings.facebook_tab
+
+        facebook[section]:
+            type: section
+            tab: romaldyminaya.socialite::lang.settings.facebook_tab
+        facebook[scopes]:
+            label: romaldyminaya.socialite::lang.settings.scope_label
+            commentAbove: romaldyminaya.socialite::lang.settings.scope_comment
+            type: repeater
+            span: left
+            tab: romaldyminaya.socialite::lang.settings.facebook_tab
+            form:
+                fields:
+                    scope:
+                        type: dropdown
+                        options: facebookScopes
+
+        # GitHub
+        github[callback_url]:
+            label: romaldyminaya.socialite::lang.settings.callback_url_label
+            comment: romaldyminaya.socialite::lang.settings.callback_url_comment
+            type: text
+            tab: romaldyminaya.socialite::lang.settings.github_tab
+            attributes: { readonly: "readonly" }
+        github[client_id]:
+            span: auto
+            label: romaldyminaya.socialite::lang.settings.client_id_label
+            commentAbove: romaldyminaya.socialite::lang.settings.client_id_comment
+            type: text
+            tab: romaldyminaya.socialite::lang.settings.github_tab
+            trigger:
+                action: enable
+                field: github[is_activated]
+                condition: checked
+        github[client_secret]:
+            span: auto
+            label: romaldyminaya.socialite::lang.settings.client_secret_label
+            commentAbove: romaldyminaya.socialite::lang.settings.client_secret_comment
+            type: text
+            tab: romaldyminaya.socialite::lang.settings.github_tab
+            trigger:
+                action: enable
+                field: github[is_activated]
+                condition: checked
+        github[is_activated]:
+            span: auto
+            label: romaldyminaya.socialite::lang.settings.activated
+            commentAbove: romaldyminaya.socialite::lang.settings.activated_comment
+            type: switch
+            tab: romaldyminaya.socialite::lang.settings.github_tab
+
+        github[section]:
+            type: section
+            tab: romaldyminaya.socialite::lang.settings.github_tab
+        github[scopes]:
+            label: romaldyminaya.socialite::lang.settings.scope_label
+            commentAbove: romaldyminaya.socialite::lang.settings.scope_comment
+            type: repeater
+            span: left
+            tab: romaldyminaya.socialite::lang.settings.github_tab
+            form:
+                fields:
+                    scope:
+                        type: dropdown
+                        options: githubScopes
+
+        # Google
+        google[callback_url]:
+            label: romaldyminaya.socialite::lang.settings.callback_url_label
+            comment: romaldyminaya.socialite::lang.settings.callback_url_comment
+            type: text
+            tab: romaldyminaya.socialite::lang.settings.google_tab
+            attributes: { readonly: "readonly" }
+        google[client_id]:
+            span: auto
+            label: romaldyminaya.socialite::lang.settings.client_id_label
+            commentAbove: romaldyminaya.socialite::lang.settings.client_id_comment
+            type: text
+            tab: romaldyminaya.socialite::lang.settings.google_tab
+            trigger:
+                action: enable
+                field: google[is_activated]
+                condition: checked
+        google[client_secret]:
+            span: auto
+            label: romaldyminaya.socialite::lang.settings.client_secret_label
+            commentAbove: romaldyminaya.socialite::lang.settings.client_secret_comment
+            type: text
+            tab: romaldyminaya.socialite::lang.settings.google_tab
+            trigger:
+                action: enable
+                field: google[is_activated]
+                condition: checked
+        google[is_activated]:
+            span: auto
+            label: romaldyminaya.socialite::lang.settings.activated
+            commentAbove: romaldyminaya.socialite::lang.settings.activated_comment
+            type: switch
+            tab: romaldyminaya.socialite::lang.settings.google_tab
+
+        google[section]:
+            type: section
+            tab: romaldyminaya.socialite::lang.settings.google_tab
+        google[scopes]:
+            label: romaldyminaya.socialite::lang.settings.scope_label
+            commentAbove: romaldyminaya.socialite::lang.settings.scope_comment
+            type: repeater
+            span: left
+            tab: romaldyminaya.socialite::lang.settings.google_tab
+            form:
+                fields:
+                    scope:
+                        type: dropdown
+                        options: googleScopes

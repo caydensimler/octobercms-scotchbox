@@ -1,0 +1,17 @@
+description = "header"
+layout = "default"
+==
+
+<!-- NAVBAR -->
+	
+	<div class="col-xs-12 navbarMain">
+		{% if user %}
+			<div class="col-xs-2 signOutLink">
+				<a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>
+			</div>
+		{% else %}
+    		<div class="col-xs-2 signOutLink">
+    			<a href="{{ 'login'|page }}">Login</a>
+    		</div>
+		{% endif %}
+	</div>
