@@ -1,0 +1,11 @@
+ <!-- Social login Buttons -->
+<loginbuttons>
+    {% for key, provider in providers %}
+        {% if provider.is_activated %}
+            <a href="{{ route(key) }}" class="btn btn-lg btn-social btn-{{ key }}">
+                <i class="fa fa-{{ key }}"></i> &nbsp; {{ key }}
+            </a>
+        {% endif %}
+    {% endfor %}
+</loginbuttons>
+ <!-- /Social login Buttons -->
