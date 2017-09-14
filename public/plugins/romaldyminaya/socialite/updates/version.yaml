@@ -1,0 +1,11 @@
+1.0.1: 
+    - First version of Socialite
+    - Add socials columns to users table
+    - Added support for Facebook - Github - Google and Twitter
+    - add_social_columns_to_users_table.php
+1.0.2:
+    - Added middleware to prevent socialite to be used wrongly
+1.0.3:
+    - Added english language support
+1.0.4:
+    - Fixed bug when trying to create a new user

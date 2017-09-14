@@ -1,0 +1,24 @@
+{
+    "name": "romaldyminaya/socialite-plugin",
+    "description": "Social Sign In using Apis from Facebook, Github, Google for OctoberCMS",
+    "homepage": "https://github.com/romaldyminaya",
+    "keywords": ["october", "cms", "romaldyminaya", "social", "login"],
+    "authors": [
+        {
+            "name": "Romaldy Minaya",
+            "homepage": "https://www.xgc.do",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/romaldyminaya/socialite.git"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "laravel/socialite": "dev-october"
+    },
+    "license": "proprietary"
+}

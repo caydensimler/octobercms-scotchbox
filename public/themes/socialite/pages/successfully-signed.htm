@@ -1,0 +1,17 @@
+title = "successfully signed on"
+url = "/success"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "homepage"
+==
+<h2> 
+	{% if user.rs_provider == 'facebook' %}
+	Facebook
+	{% else %}
+	Regular
+	{% endif %}
+	Sign On Successful! Welcome {{ user.name }}.
+</h2>
