@@ -1,6 +1,7 @@
-1505494825a:1:{s:8:"home.htm";a:8:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:57:"title = "Demonstration"
+1505506388a:1:{s:8:"home.htm";a:8:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:53:"title = "Homepage"
 url = "/"
 layout = "default"
 ==
 
-";s:5:"mtime";i:1505492753;s:6:"markup";s:0:"";s:4:"code";N;s:5:"title";s:13:"Demonstration";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";}}
+
+";s:5:"mtime";i:1505500485;s:6:"markup";s:0:"";s:4:"code";N;s:5:"title";s:8:"Homepage";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";}}

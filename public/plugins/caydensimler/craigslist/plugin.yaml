@@ -1,0 +1,6 @@
+plugin:
+    name: 'caydensimler.craigslist::lang.plugin.name'
+    description: 'caydensimler.craigslist::lang.plugin.description'
+    author: 'Cayden Simler'
+    icon: oc-icon-money
+    homepage: ''
