@@ -9,9 +9,9 @@ redirect = "homepage"
 ==
 <h2> 
 	{% if user.rs_provider == 'facebook' %}
-	Facebook
+		Facebook
 	{% else %}
-	Regular
+		Regular
 	{% endif %}
-	Sign On Successful! Welcome {{ user.name }}.
+	sign on successful. Welcome, {{ user.name }}!
 </h2>
