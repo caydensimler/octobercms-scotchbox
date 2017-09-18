@@ -1,0 +1,65 @@
+fields:
+    title:
+        label: Title
+        oc.commentPosition: ''
+        span: full
+        placeholder: 'Title of Listing'
+        type: text
+    body:
+        label: Body
+        size: ''
+        oc.commentPosition: ''
+        span: full
+        placeholder: 'Describe what you''re selling here'
+        type: richeditor
+    price:
+        label: Price
+        oc.commentPosition: ''
+        span: left
+        placeholder: 'Price of Listing'
+        type: number
+    contact_email:
+        label: 'Contact Email'
+        span: right
+        oc.commentPosition: ''
+        placeholder: 'Listing Contact Email'
+        type: text
+    slug:
+        label: Slug
+        span: full
+        oc.commentPosition: ''
+        preset:
+            field: title
+            type: slug
+        type: text
+    image:
+        label: Image
+        span: auto
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '100'
+        imageHeight: '100'
+        type: fileupload
+    image_gallery:
+        label: 'Image Gallery'
+        span: auto
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageHeight: '80'
+        imageWidth: '80'
+        type: fileupload
+    categories:
+        label: Categories
+        span: auto
+        oc.commentPosition: ''
+        nameFrom: category_title
+        descriptionFrom: description
+        type: relation

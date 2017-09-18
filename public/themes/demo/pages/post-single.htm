@@ -1,0 +1,54 @@
+title = "Post single"
+url = "/post/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "CaydenSimler\Craigslist\Models\Post"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+
+	<div class="col-xs-12 text-center postTitle">{{ record.title }}</div>
+
+	<div class="col-xs-12 text-center postPrice">
+		${{ record.price }} 
+		<br>
+		{{ record.contact_email }}
+		<hr class="postContactBorder">
+	</div>
+
+	<div class="col-xs-12 invisible"><h4>kjasd;fkj</h4></div>
+	
+	<div class="col-xs-12 text-center postImageGallery">
+		{% for image in record.image_gallery %}
+
+			<a href="{{ image.path }}">
+				<img src="{{ image.thumb(200, 200, {'mode':'crop'})  }}">
+			</a>
+		{% endfor %}
+	</div>
+
+	<div class="col-xs-12 text-center postBody">
+		{{ record.body|raw }}
+	</div>
+
+	<div class="col-xs-12 text-center">
+		<h3>Categories</h3>
+
+		{% for category in record.categories %}
+			{{ category.category_title }}
+			<br>
+		{% endfor %}
+	</div>
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

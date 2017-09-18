@@ -1,0 +1,11 @@
+name: Posts
+modelClass: CaydenSimler\Craigslist\Models\Post
+form: $/caydensimler/craigslist/models/post/fields.yaml
+defaultRedirect: caydensimler/craigslist/posts
+create:
+    redirect: 'caydensimler/craigslist/posts/update/:id'
+    redirectClose: caydensimler/craigslist/posts
+update:
+    redirect: caydensimler/craigslist/posts
+    redirectClose: caydensimler/craigslist/posts
+preview: {  }

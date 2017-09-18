@@ -1,0 +1,11 @@
+title: Posts
+modelClass: CaydenSimler\Craigslist\Models\Post
+list: $/caydensimler/craigslist/models/post/columns.yaml
+recordUrl: 'caydensimler/craigslist/posts/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

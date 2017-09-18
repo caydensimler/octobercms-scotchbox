@@ -4,3 +4,13 @@ plugin:
     author: 'Cayden Simler'
     icon: oc-icon-money
     homepage: ''
+navigation:
+    main-menu-item:
+        label: Post
+        url: caydensimler/craigslist/posts
+        icon: icon-life-ring
+        sideMenu:
+            side-menu-item:
+                label: Categories
+                url: caydensimler/craigslist/categories
+                icon: icon-tags

@@ -1,0 +1,10 @@
+name: Categories
+form: $/caydensimler/craigslist/models/category/fields.yaml
+modelClass: CaydenSimler\Craigslist\Models\Category
+defaultRedirect: caydensimler/craigslist/categories
+create:
+    redirect: 'caydensimler/craigslist/categories/update/:id'
+    redirectClose: caydensimler/craigslist/categories
+update:
+    redirect: caydensimler/craigslist/categories
+    redirectClose: caydensimler/craigslist/categories
