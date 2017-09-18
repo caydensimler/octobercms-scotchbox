@@ -42,11 +42,19 @@ class __TwigTemplate_9263d241fb6c99789fa6c62ecc10d1127b51cd12705218446ef4a2a656e
         echo "\"><a href=\"";
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("home");
         echo "\">Categories List</a></li>
+                <li class=\"";
+        // line 17
+        if (($this->getAttribute($this->getAttribute(($context["this"] ?? null), "page", array()), "id", array()) == "posts")) {
+            echo "active";
+        }
+        echo "\"><a href=\"";
+        echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("posts");
+        echo "\">All Posts</a></li>
 
                 ";
-        // line 18
+        // line 19
         if (($context["user"] ?? null)) {
-            // line 19
+            // line 20
             echo "                    <li class=\"";
             if (($this->getAttribute($this->getAttribute(($context["this"] ?? null), "page", array()), "id", array()) == "login")) {
                 echo "active";
@@ -57,7 +65,7 @@ class __TwigTemplate_9263d241fb6c99789fa6c62ecc10d1127b51cd12705218446ef4a2a656e
                     <li><a data-request=\"onLogout\" data-request-data=\"redirect: '/'\">Sign Out</a></li>
                 ";
         } else {
-            // line 22
+            // line 23
             echo "                    <li class=\"";
             if (($this->getAttribute($this->getAttribute(($context["this"] ?? null), "page", array()), "id", array()) == "login")) {
                 echo "active";
@@ -67,7 +75,7 @@ class __TwigTemplate_9263d241fb6c99789fa6c62ecc10d1127b51cd12705218446ef4a2a656e
             echo "\">Login/Register</a></li>
                 ";
         }
-        // line 24
+        // line 25
         echo "
             </ul>
         </div>
@@ -87,7 +95,7 @@ class __TwigTemplate_9263d241fb6c99789fa6c62ecc10d1127b51cd12705218446ef4a2a656e
 
     public function getDebugInfo()
     {
-        return array (  71 => 24,  61 => 22,  50 => 19,  48 => 18,  39 => 16,  31 => 11,  19 => 1,);
+        return array (  79 => 25,  69 => 23,  58 => 20,  56 => 19,  47 => 17,  39 => 16,  31 => 11,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -116,6 +124,7 @@ class __TwigTemplate_9263d241fb6c99789fa6c62ecc10d1127b51cd12705218446ef4a2a656e
             <ul class=\"nav navbar-nav\">
                 <li class=\"separator hidden-xs\"></li>
                 <li class=\"{% if this.page.id == 'home' %}active{% endif %}\"><a href=\"{{ 'home'|page }}\">Categories List</a></li>
+                <li class=\"{% if this.page.id == 'posts' %}active{% endif %}\"><a href=\"{{ 'posts'|page }}\">All Posts</a></li>
 
                 {% if user %}
                     <li class=\"{% if this.page.id == 'login' %}active{% endif %}\"><a href=\"{{ 'login'|page }}\">Account</a></li>

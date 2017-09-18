@@ -43,25 +43,22 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
             // line 12
             echo twig_escape_filter($this->env, $this->getAttribute(($context["record"] ?? null), "contact_email", array()), "html", null, true);
             echo "
-\t\t<hr class=\"postContactBorder\">
 \t</div>
-
-\t<div class=\"col-xs-12 invisible\"><h4>kjasd;fkj</h4></div>
 \t
 \t<div class=\"col-xs-12 text-center postImageGallery\">
 \t\t";
-            // line 19
+            // line 16
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["record"] ?? null), "image_gallery", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-                // line 20
+                // line 17
                 echo "
 \t\t\t<a href=\"";
-                // line 21
+                // line 18
                 echo twig_escape_filter($this->env, $this->getAttribute($context["image"], "path", array()), "html", null, true);
                 echo "\">
 \t\t\t\t<img src=\"";
-                // line 22
+                // line 19
                 echo twig_escape_filter($this->env, $this->getAttribute($context["image"], "thumb", array(0 => 200, 1 => 200, 2 => array("mode" => "crop")), "method"), "html", null, true);
                 echo "\">
 \t\t\t</a>
@@ -70,12 +67,12 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 25
+            // line 22
             echo "\t</div>
 
 \t<div class=\"col-xs-12 text-center postBody\">
 \t\t";
-            // line 28
+            // line 25
             echo $this->getAttribute(($context["record"] ?? null), "body", array());
             echo "
 \t</div>
@@ -84,11 +81,11 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
 \t\t<h3>Categories</h3>
 
 \t\t";
-            // line 34
+            // line 31
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["record"] ?? null), "categories", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-                // line 35
+                // line 32
                 echo "\t\t\t";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["category"], "category_title", array()), "html", null, true);
                 echo "
@@ -98,12 +95,12 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 38
+            // line 35
             echo "\t</div>
 
 ";
         } else {
-            // line 41
+            // line 38
             echo "    ";
             echo twig_escape_filter($this->env, ($context["notFoundMessage"] ?? null), "html", null, true);
             echo "
@@ -123,7 +120,7 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
 
     public function getDebugInfo()
     {
-        return array (  107 => 41,  102 => 38,  92 => 35,  88 => 34,  79 => 28,  74 => 25,  65 => 22,  61 => 21,  58 => 20,  54 => 19,  44 => 12,  39 => 10,  33 => 7,  30 => 6,  28 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  104 => 38,  99 => 35,  89 => 32,  85 => 31,  76 => 25,  71 => 22,  62 => 19,  58 => 18,  55 => 17,  51 => 16,  44 => 12,  39 => 10,  33 => 7,  30 => 6,  28 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -148,10 +145,7 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
 \t\t\${{ record.price }} 
 \t\t<br>
 \t\t{{ record.contact_email }}
-\t\t<hr class=\"postContactBorder\">
 \t</div>
-
-\t<div class=\"col-xs-12 invisible\"><h4>kjasd;fkj</h4></div>
 \t
 \t<div class=\"col-xs-12 text-center postImageGallery\">
 \t\t{% for image in record.image_gallery %}

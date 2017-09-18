@@ -32,7 +32,7 @@ class Category extends Model
         'posts' => [
             'CaydenSimler\Craigslist\Models\Post',
             'table' => 'caydensimler_craigslist_p_c',
-            'order' => 'post_title'
+            'order' => 'title'
         ]
     ];
 
