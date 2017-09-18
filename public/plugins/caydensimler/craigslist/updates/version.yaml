@@ -3,3 +3,9 @@
 1.0.2:
     - 'Created table caydensimler_craigslist_categories'
     - builder_table_create_caydensimler_craigslist_categories.php
+1.0.3:
+    - 'Created table caydensimler_craigslist_post'
+    - builder_table_create_caydensimler_craigslist_post.php
+1.0.4:
+    - 'Created table caydensimler_craigslist_subcategories'
+    - builder_table_create_caydensimler_craigslist_subcategories.php
