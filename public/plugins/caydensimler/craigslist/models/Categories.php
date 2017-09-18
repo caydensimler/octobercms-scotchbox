@@ -26,3 +26,4 @@ class Categories extends Model
      */
     public $table = 'caydensimler_craigslist_categories';
 }
+

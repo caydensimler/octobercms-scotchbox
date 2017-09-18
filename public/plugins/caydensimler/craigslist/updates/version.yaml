@@ -21,3 +21,6 @@
 1.0.8:
     - 'Updated table caydensimler_craigslist_post'
     - builder_table_update_caydensimler_craigslist_post_3.php
+1.0.9:
+    - 'Updated table caydensimler_craigslist_post'
+    - builder_table_update_caydensimler_craigslist_post_4.php
