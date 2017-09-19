@@ -81,7 +81,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
             <div class=\"col-xs-12 text-center\">
                 <img src=\"";
             // line 30
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["record"], "image", array()), "thumb", array(0 => 200, 1 => ($context["auto"] ?? null)), "method"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["record"], "image", array()), "thumb", array(0 => 200, 1 => 200, 2 => array("mode" => "crop")), "method"), "html", null, true);
             echo "\">
             </div>
             
@@ -210,7 +210,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
             <div class=\"col-xs-12 postPrice\">\${{ record.price }}</div>
 
             <div class=\"col-xs-12 text-center\">
-                <img src=\"{{ record.image.thumb(200, auto) }}\">
+                <img src=\"{{ record.image.thumb(200, 200, {'mode':'crop'})  }}\">
             </div>
             
         </div>

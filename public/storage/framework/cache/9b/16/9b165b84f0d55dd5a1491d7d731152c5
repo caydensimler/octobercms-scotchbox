@@ -1,4 +1,4 @@
-1505772409a:1:{s:9:"posts.htm";a:10:{s:8:"fileName";s:9:"posts.htm";s:7:"content";s:2684:"title = "Posts"
+1505849138a:1:{s:9:"posts.htm";a:10:{s:8:"fileName";s:9:"posts.htm";s:7:"content";s:2701:"title = "Posts"
 url = "/posts/:page?"
 layout = "default"
 is_hidden = 0
@@ -43,7 +43,7 @@ pageNumber = "{{ :page }}"
             <div class="col-xs-12 postPrice">${{ record.price }}</div>
 
             <div class="col-xs-12 text-center">
-                <img src="{{ record.image.thumb(200, auto) }}">
+                <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
             </div>
             
         </div>
@@ -68,7 +68,7 @@ pageNumber = "{{ :page }}"
             <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
         {% endif %}
     </ul>
-{% endif %}";s:5:"mtime";i:1505763769;s:6:"markup";s:2324:"{% set records = builderList.records %}
+{% endif %}";s:5:"mtime";i:1505834155;s:6:"markup";s:2341:"{% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
 {% set noRecordsMessage = builderList.noRecordsMessage %}
 {% set detailsPage = builderList.detailsPage %}
@@ -97,7 +97,7 @@ pageNumber = "{{ :page }}"
             <div class="col-xs-12 postPrice">${{ record.price }}</div>
 
             <div class="col-xs-12 text-center">
-                <img src="{{ record.image.thumb(200, auto) }}">
+                <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
             </div>
             
         </div>

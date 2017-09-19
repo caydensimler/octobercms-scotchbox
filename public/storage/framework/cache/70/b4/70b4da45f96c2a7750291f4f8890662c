@@ -1,0 +1,79 @@
+1505849138a:1:{s:14:"categories.htm";a:10:{s:8:"fileName";s:14:"categories.htm";s:7:"content";s:1080:"title = "Categories"
+url = "/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "CaydenSimler\Craigslist\Models\Category"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "category_title"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+
+    <div class="col-xs-12 text-center postTitle">
+    	{{ attribute(record, displayColumn) }}
+    </div>
+
+    {% for post in record.posts %}
+
+	    <div class="col-xs-6 text-center">
+
+			<div class="col-xs-12 postTitle">
+				<a href="/post/{{ post.slug }}">
+				{{ post.title|length > 25 ? post.title|slice(0, 25) ~ '...' : post.title }}</a>
+			</div>
+
+			<div class="col-xs-12 postPrice">
+				${{ post.price }}
+			</div>
+
+	        <div class="col-xs-12 text-center">
+	            <img src="{{ post.image.thumb(200, 200, {'mode':'crop'})  }}">
+	        </div>
+
+	    </div>
+
+	{% endfor %}
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}";s:5:"mtime";i:1505838036;s:6:"markup";s:809:"{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+
+    <div class="col-xs-12 text-center postTitle">
+    	{{ attribute(record, displayColumn) }}
+    </div>
+
+    {% for post in record.posts %}
+
+	    <div class="col-xs-6 text-center">
+
+			<div class="col-xs-12 postTitle">
+				<a href="/post/{{ post.slug }}">
+				{{ post.title|length > 25 ? post.title|slice(0, 25) ~ '...' : post.title }}</a>
+			</div>
+
+			<div class="col-xs-12 postPrice">
+				${{ post.price }}
+			</div>
+
+	        <div class="col-xs-12 text-center">
+	            <img src="{{ post.image.thumb(200, 200, {'mode':'crop'})  }}">
+	        </div>
+
+	    </div>
+
+	{% endfor %}
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}";s:4:"code";N;s:5:"title";s:10:"Categories";s:3:"url";s:6:"/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:14:"builderDetails";a:5:{s:10:"modelClass";s:39:"CaydenSimler\Craigslist\Models\Category";s:15:"identifierValue";s:11:"{{ :slug }}";s:14:"modelKeyColumn";s:4:"slug";s:13:"displayColumn";s:14:"category_title";s:15:"notFoundMessage";s:16:"Record not found";}}}

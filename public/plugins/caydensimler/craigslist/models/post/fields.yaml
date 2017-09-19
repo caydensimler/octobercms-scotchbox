@@ -63,3 +63,8 @@ fields:
         nameFrom: category_title
         descriptionFrom: description
         type: relation
+    sub_category:
+        label: Sub Categories
+        span: full
+        type: subcategorybox
+

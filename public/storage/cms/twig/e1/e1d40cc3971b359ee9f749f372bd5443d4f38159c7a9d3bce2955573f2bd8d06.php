@@ -29,7 +29,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
         $context["detailsUrlParameter"] = $this->getAttribute(($context["builderList"] ?? null), "detailsUrlParameter", array());
         // line 7
         echo "
-<div class=\"col-xs-12 categoriesBody\">
+<div class=\"col-xs-12 text-center\">
     ";
         // line 9
         $context['_parent'] = $context;
@@ -37,7 +37,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
             // line 10
-            echo "        <div class=\"col-xs-12 col-md-6 text-center categoriesList\">
+            echo "        <div class=\"col-xs-6 categoriesList\">
             ";
             // line 12
             echo "            ";
@@ -53,10 +53,12 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
             }
             // line 16
             echo "
-                ";
+                <a href=\"/";
             // line 17
+            echo twig_escape_filter($this->env, $this->getAttribute($context["record"], "slug", array()), "html", null, true);
+            echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["record"], "category_title", array()), "html", null, true);
-            echo "
+            echo "</a>
 
                 ";
             // line 19
@@ -152,7 +154,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
 
     public function getDebugInfo()
     {
-        return array (  138 => 44,  132 => 42,  130 => 41,  127 => 40,  116 => 37,  111 => 36,  107 => 35,  104 => 34,  98 => 32,  96 => 31,  93 => 30,  91 => 29,  87 => 27,  78 => 25,  72 => 23,  69 => 22,  65 => 20,  63 => 19,  58 => 17,  55 => 16,  49 => 14,  46 => 13,  43 => 12,  40 => 10,  35 => 9,  31 => 7,  29 => 6,  27 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  140 => 44,  134 => 42,  132 => 41,  129 => 40,  118 => 37,  113 => 36,  109 => 35,  106 => 34,  100 => 32,  98 => 31,  95 => 30,  93 => 29,  89 => 27,  80 => 25,  74 => 23,  71 => 22,  67 => 20,  65 => 19,  58 => 17,  55 => 16,  49 => 14,  46 => 13,  43 => 12,  40 => 10,  35 => 9,  31 => 7,  29 => 6,  27 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -172,16 +174,16 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
-<div class=\"col-xs-12 categoriesBody\">
+<div class=\"col-xs-12 text-center\">
     {% for record in records %}
-        <div class=\"col-xs-12 col-md-6 text-center categoriesList\">
+        <div class=\"col-xs-6 categoriesList\">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
                     <a href=\"{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}\">
                 {% endif %}
 
-                {{ record.category_title }}
+                <a href=\"/{{ record.slug }}\">{{ record.category_title }}</a>
 
                 {% if detailsPage %}
                     </a>

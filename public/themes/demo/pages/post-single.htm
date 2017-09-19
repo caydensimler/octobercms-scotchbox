@@ -37,12 +37,23 @@ notFoundMessage = "Record not found"
 		{{ record.body|raw }}
 	</div>
 
-	<div class="col-xs-12 text-center">
+	<div class="col-xs-6 text-center">
 		<h3>Categories</h3>
 
 		{% for category in record.categories %}
-			{{ category.category_title }}
+			<a href="/{{ category.slug }}">{{ category.category_title }}</a>
 			<br>
+		{% endfor %}
+	</div>
+
+
+	<div class="col-xs-6 text-center">
+		<h3>Sub-Categories</h3>
+
+		{% for sub in record.sub_category %}
+
+			<div class="col-xs-12">{{ sub.sub_category }}</div>
+	
 		{% endfor %}
 	</div>
 

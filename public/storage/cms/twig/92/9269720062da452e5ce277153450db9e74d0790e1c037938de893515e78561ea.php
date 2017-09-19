@@ -77,7 +77,7 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
             echo "
 \t</div>
 
-\t<div class=\"col-xs-12 text-center\">
+\t<div class=\"col-xs-6 text-center\">
 \t\t<h3>Categories</h3>
 
 \t\t";
@@ -86,9 +86,11 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
             $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["record"] ?? null), "categories", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
                 // line 32
-                echo "\t\t\t";
+                echo "\t\t\t<a href=\"/";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["category"], "slug", array()), "html", null, true);
+                echo "\">";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["category"], "category_title", array()), "html", null, true);
-                echo "
+                echo "</a>
 \t\t\t<br>
 \t\t";
             }
@@ -98,9 +100,33 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
             // line 35
             echo "\t</div>
 
+
+\t<div class=\"col-xs-6 text-center\">
+\t\t<h3>Sub-Categories</h3>
+
+\t\t";
+            // line 41
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["record"] ?? null), "sub_category", array()));
+            foreach ($context['_seq'] as $context["_key"] => $context["sub"]) {
+                // line 42
+                echo "
+\t\t\t<div class=\"col-xs-12\">";
+                // line 43
+                echo twig_escape_filter($this->env, $this->getAttribute($context["sub"], "sub_category", array()), "html", null, true);
+                echo "</div>
+\t
+\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sub'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 46
+            echo "\t</div>
+
 ";
         } else {
-            // line 38
+            // line 49
             echo "    ";
             echo twig_escape_filter($this->env, ($context["notFoundMessage"] ?? null), "html", null, true);
             echo "
@@ -120,7 +146,7 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
 
     public function getDebugInfo()
     {
-        return array (  104 => 38,  99 => 35,  89 => 32,  85 => 31,  76 => 25,  71 => 22,  62 => 19,  58 => 18,  55 => 17,  51 => 16,  44 => 12,  39 => 10,  33 => 7,  30 => 6,  28 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  130 => 49,  125 => 46,  116 => 43,  113 => 42,  109 => 41,  101 => 35,  89 => 32,  85 => 31,  76 => 25,  71 => 22,  62 => 19,  58 => 18,  55 => 17,  51 => 16,  44 => 12,  39 => 10,  33 => 7,  30 => 6,  28 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -160,12 +186,23 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
 \t\t{{ record.body|raw }}
 \t</div>
 
-\t<div class=\"col-xs-12 text-center\">
+\t<div class=\"col-xs-6 text-center\">
 \t\t<h3>Categories</h3>
 
 \t\t{% for category in record.categories %}
-\t\t\t{{ category.category_title }}
+\t\t\t<a href=\"/{{ category.slug }}\">{{ category.category_title }}</a>
 \t\t\t<br>
+\t\t{% endfor %}
+\t</div>
+
+
+\t<div class=\"col-xs-6 text-center\">
+\t\t<h3>Sub-Categories</h3>
+
+\t\t{% for sub in record.sub_category %}
+
+\t\t\t<div class=\"col-xs-12\">{{ sub.sub_category }}</div>
+\t
 \t\t{% endfor %}
 \t</div>
 

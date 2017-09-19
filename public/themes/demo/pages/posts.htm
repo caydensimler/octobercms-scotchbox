@@ -43,7 +43,7 @@ pageNumber = "{{ :page }}"
             <div class="col-xs-12 postPrice">${{ record.price }}</div>
 
             <div class="col-xs-12 text-center">
-                <img src="{{ record.image.thumb(200, auto) }}">
+                <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
             </div>
             
         </div>

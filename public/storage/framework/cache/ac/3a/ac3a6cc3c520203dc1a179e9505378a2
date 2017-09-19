@@ -1,4 +1,4 @@
-1505772409a:1:{s:15:"post-single.htm";a:10:{s:8:"fileName";s:15:"post-single.htm";s:7:"content";s:1191:"title = "Post single"
+1505849138a:1:{s:15:"post-single.htm";a:10:{s:8:"fileName";s:15:"post-single.htm";s:7:"content";s:1421:"title = "Post single"
 url = "/post/:slug"
 layout = "default"
 is_hidden = 0
@@ -37,18 +37,29 @@ notFoundMessage = "Record not found"
 		{{ record.body|raw }}
 	</div>
 
-	<div class="col-xs-12 text-center">
+	<div class="col-xs-6 text-center">
 		<h3>Categories</h3>
 
 		{% for category in record.categories %}
-			{{ category.category_title }}
+			<a href="/{{ category.slug }}">{{ category.category_title }}</a>
 			<br>
+		{% endfor %}
+	</div>
+
+
+	<div class="col-xs-6 text-center">
+		<h3>Sub-Categories</h3>
+
+		{% for sub in record.sub_category %}
+
+			<div class="col-xs-12">{{ sub.sub_category }}</div>
+	
 		{% endfor %}
 	</div>
 
 {% else %}
     {{ notFoundMessage }}
-{% endif %}";s:5:"mtime";i:1505769209;s:6:"markup";s:915:"{% set record = builderDetails.record %}
+{% endif %}";s:5:"mtime";i:1505847880;s:6:"markup";s:1145:"{% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
@@ -75,12 +86,23 @@ notFoundMessage = "Record not found"
 		{{ record.body|raw }}
 	</div>
 
-	<div class="col-xs-12 text-center">
+	<div class="col-xs-6 text-center">
 		<h3>Categories</h3>
 
 		{% for category in record.categories %}
-			{{ category.category_title }}
+			<a href="/{{ category.slug }}">{{ category.category_title }}</a>
 			<br>
+		{% endfor %}
+	</div>
+
+
+	<div class="col-xs-6 text-center">
+		<h3>Sub-Categories</h3>
+
+		{% for sub in record.sub_category %}
+
+			<div class="col-xs-12">{{ sub.sub_category }}</div>
+	
 		{% endfor %}
 	</div>
 

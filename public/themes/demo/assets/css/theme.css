@@ -4,18 +4,18 @@
 /* Posts Page */
 
   .postTitle {
-    font-size: 50px;
+    font-size: 30px;
     color: black;
     border-bottom: 1px solid black;
   }
 
   .postPrice {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .postBody {
-    font-size: 25px;
-    background-color: #DDDDDD;
+    font-size: 15px;
+    background-color: #E5D5CC;
   }
 
   .postContactBorder {
@@ -23,7 +23,7 @@
   }
 
   .postImageGallery {
-    background-color: #DDDDDD;
+    background-color: #E5D5CC;
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -35,7 +35,8 @@
   }
 
   .categoriesList {
-    font-size: 40px;
+    font-size: 20px;
+    padding: 10px;
   }
 
 

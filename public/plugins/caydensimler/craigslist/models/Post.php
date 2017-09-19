@@ -27,6 +27,9 @@ class Post extends Model
     public $table = 'caydensimler_craigslist_post';
 
 
+    protected $jsonable = ['sub_category'];
+
+
     //  Relations
 
     public $belongsToMany = [

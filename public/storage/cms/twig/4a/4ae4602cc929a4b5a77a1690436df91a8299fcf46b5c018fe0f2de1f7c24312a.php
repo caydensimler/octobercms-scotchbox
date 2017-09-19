@@ -43,72 +43,74 @@ class __TwigTemplate_751f40d8654b3262698652e51583c6bb51a1edec7628633fa14ef20e322
         // line 12
         echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/css/vendor.css");
         echo "\" rel=\"stylesheet\">
+        <link href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css\" rel=\"stylesheet\" />
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js\"></script>
         <link href=\"";
-        // line 13
+        // line 15
         echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/css/theme.css");
         echo "\" rel=\"stylesheet\">
         ";
-        // line 14
+        // line 16
         echo $this->env->getExtension('CMS')->assetsFunction('css');
         echo $this->env->getExtension('CMS')->displayBlock('styles');
-        // line 15
+        // line 17
         echo "    </head>
     <body>
 
         <!-- Header -->
         <header id=\"layout-header\">
             ";
-        // line 20
+        // line 22
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('CMS')->partialFunction("site/header"        , $context['__cms_partial_params']        );
         unset($context['__cms_partial_params']);
-        // line 21
+        // line 23
         echo "        </header>
 
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 25
+        // line 27
         echo $this->env->getExtension('CMS')->pageFunction();
-        // line 26
+        // line 28
         echo "        </section>
         
         <!-- Footer -->
         <!-- <footer id=\"layout-footer\">
             ";
-        // line 30
+        // line 32
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('CMS')->partialFunction("site/footer"        , $context['__cms_partial_params']        );
         unset($context['__cms_partial_params']);
-        // line 31
+        // line 33
         echo "        </footer> -->
 
         <!-- Scripts -->
         <script src=\"";
-        // line 34
+        // line 36
         echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 35
+        // line 37
         echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 36
+        // line 38
         echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 37
+        // line 39
         echo '<script src="'. Request::getBasePath()
                 .'/modules/system/assets/js/framework.js"></script>'.PHP_EOL;
         echo '<script src="'. Request::getBasePath()
                     .'/modules/system/assets/js/framework.extras.js"></script>'.PHP_EOL;
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras.css">'.PHP_EOL;
-        // line 38
+        // line 40
         echo "        ";
         echo $this->env->getExtension('CMS')->assetsFunction('js');
         echo $this->env->getExtension('CMS')->displayBlock('scripts');
-        // line 39
+        // line 41
         echo "
     </body>
 </html>";
@@ -126,7 +128,7 @@ class __TwigTemplate_751f40d8654b3262698652e51583c6bb51a1edec7628633fa14ef20e322
 
     public function getDebugInfo()
     {
-        return array (  112 => 39,  108 => 38,  101 => 37,  97 => 36,  93 => 35,  89 => 34,  84 => 31,  80 => 30,  74 => 26,  72 => 25,  66 => 21,  62 => 20,  55 => 15,  52 => 14,  48 => 13,  44 => 12,  40 => 11,  33 => 7,  29 => 6,  25 => 5,  19 => 1,);
+        return array (  114 => 41,  110 => 40,  103 => 39,  99 => 38,  95 => 37,  91 => 36,  86 => 33,  82 => 32,  76 => 28,  74 => 27,  68 => 23,  64 => 22,  57 => 17,  54 => 16,  50 => 15,  44 => 12,  40 => 11,  33 => 7,  29 => 6,  25 => 5,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -151,6 +153,8 @@ class __TwigTemplate_751f40d8654b3262698652e51583c6bb51a1edec7628633fa14ef20e322
         <meta name=\"generator\" content=\"OctoberCMS\">
         <link rel=\"icon\" type=\"image/png\" href=\"{{ 'assets/images/october.png'|theme }}\">
         <link href=\"{{ 'assets/css/vendor.css'|theme }}\" rel=\"stylesheet\">
+        <link href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css\" rel=\"stylesheet\" />
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js\"></script>
         <link href=\"{{ 'assets/css/theme.css'|theme }}\" rel=\"stylesheet\">
         {% styles %}
     </head>

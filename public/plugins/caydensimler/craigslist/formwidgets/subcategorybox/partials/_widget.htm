@@ -1,0 +1,23 @@
+<style type="text/css">
+	.select2-container {
+		width: 100% !important;
+		display: block;
+	}
+</style>
+
+<select multiple class="s2">
+	<option value="1">Dog</option>
+	<option value="2">Black Lab/Great Dane</option>
+</select>
+
+<script>
+	
+	$(document).on('render', function(){
+		$('.s2').select2({
+			placeholder: 'Add a sub-category',
+			tags: true
+		})
+	});
+
+
+</script>

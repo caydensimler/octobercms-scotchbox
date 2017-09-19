@@ -14,3 +14,7 @@ navigation:
                 label: Categories
                 url: caydensimler/craigslist/categories
                 icon: icon-tags
+            side-menu-item2:
+                label: Subcategories
+                url: caydensimler/craigslist/subcategories
+                icon: icon-tag
