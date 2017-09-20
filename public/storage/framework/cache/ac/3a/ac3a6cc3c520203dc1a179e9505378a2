@@ -1,4 +1,4 @@
-1505849138a:1:{s:15:"post-single.htm";a:10:{s:8:"fileName";s:15:"post-single.htm";s:7:"content";s:1421:"title = "Post single"
+1505938377a:1:{s:15:"post-single.htm";a:10:{s:8:"fileName";s:15:"post-single.htm";s:7:"content";s:1441:"title = "Post single"
 url = "/post/:slug"
 layout = "default"
 is_hidden = 0
@@ -50,16 +50,16 @@ notFoundMessage = "Record not found"
 	<div class="col-xs-6 text-center">
 		<h3>Sub-Categories</h3>
 
-		{% for sub in record.sub_category %}
+		{% for subcategories in record.subcategories %}
 
-			<div class="col-xs-12">{{ sub.sub_category }}</div>
+			<div class="col-xs-12">{{ subcategories.subcategory }}</div>
 	
 		{% endfor %}
 	</div>
 
 {% else %}
     {{ notFoundMessage }}
-{% endif %}";s:5:"mtime";i:1505847880;s:6:"markup";s:1145:"{% set record = builderDetails.record %}
+{% endif %}";s:5:"mtime";i:1505933920;s:6:"markup";s:1165:"{% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
@@ -99,9 +99,9 @@ notFoundMessage = "Record not found"
 	<div class="col-xs-6 text-center">
 		<h3>Sub-Categories</h3>
 
-		{% for sub in record.sub_category %}
+		{% for subcategories in record.subcategories %}
 
-			<div class="col-xs-12">{{ sub.sub_category }}</div>
+			<div class="col-xs-12">{{ subcategories.subcategory }}</div>
 	
 		{% endfor %}
 	</div>

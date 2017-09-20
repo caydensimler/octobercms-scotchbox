@@ -23,48 +23,49 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
         $context["notFoundMessage"] = $this->getAttribute(($context["builderDetails"] ?? null), "notFoundMessage", array());
         // line 4
         echo "
+
 ";
-        // line 5
+        // line 6
         if (($context["record"] ?? null)) {
-            // line 6
+            // line 7
             echo "
     <div class=\"col-xs-12 text-center postTitle\">
     \t";
-            // line 8
+            // line 9
             echo twig_escape_filter($this->env, $this->getAttribute(($context["record"] ?? null), ($context["displayColumn"] ?? null)), "html", null, true);
             echo "
     </div>
 
     ";
-            // line 11
+            // line 12
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["record"] ?? null), "posts", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-                // line 12
+                // line 13
                 echo "
 \t    <div class=\"col-xs-6 text-center\">
 
 \t\t\t<div class=\"col-xs-12 postTitle\">
 \t\t\t\t<a href=\"/post/";
-                // line 16
+                // line 17
                 echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "slug", array()), "html", null, true);
                 echo "\">
 \t\t\t\t";
-                // line 17
+                // line 18
                 echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute($context["post"], "title", array())) > 25)) ? ((twig_slice($this->env, $this->getAttribute($context["post"], "title", array()), 0, 25) . "...")) : ($this->getAttribute($context["post"], "title", array()))), "html", null, true);
                 echo "</a>
 \t\t\t</div>
 
 \t\t\t<div class=\"col-xs-12 postPrice\">
 \t\t\t\t\$";
-                // line 21
+                // line 22
                 echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "price", array()), "html", null, true);
                 echo "
 \t\t\t</div>
 
 \t        <div class=\"col-xs-12 text-center\">
 \t            <img src=\"";
-                // line 25
+                // line 26
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["post"], "image", array()), "thumb", array(0 => 200, 1 => 200, 2 => array("mode" => "crop")), "method"), "html", null, true);
                 echo "\">
 \t        </div>
@@ -76,11 +77,11 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 31
+            // line 32
             echo "
 ";
         } else {
-            // line 33
+            // line 34
             echo "    ";
             echo twig_escape_filter($this->env, ($context["notFoundMessage"] ?? null), "html", null, true);
             echo "
@@ -100,7 +101,7 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
 
     public function getDebugInfo()
     {
-        return array (  84 => 33,  80 => 31,  68 => 25,  61 => 21,  54 => 17,  50 => 16,  44 => 12,  40 => 11,  34 => 8,  30 => 6,  28 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  85 => 34,  81 => 32,  69 => 26,  62 => 22,  55 => 18,  51 => 17,  45 => 13,  41 => 12,  35 => 9,  31 => 7,  29 => 6,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -116,6 +117,7 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
         return new Twig_Source("{% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
+
 
 {% if record %}
 

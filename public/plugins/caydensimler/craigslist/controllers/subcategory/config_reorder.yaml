@@ -1,0 +1,4 @@
+title: Subcategory
+modelClass: CaydenSimler\Craigslist\Models\Subcategory
+toolbar:
+    buttons: reorder_toolbar

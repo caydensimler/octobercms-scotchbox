@@ -8,19 +8,18 @@ class Plugin extends PluginBase
     {
     }
 
+    public function registerFormWidgets() {
+        return [
+            'CaydenSimler\Craigslist\FormWidgets\Subcategorybox' => [
+                'label' => 'Subcategorybox field',
+                'code' => 'subcategorybox'
+            ]
+        ];
+    }
+
     public function registerSettings()
     {
     }
-
-    public function registerFormWidgets() {
-    	return [
-    		'CaydenSimler\Craigslist\FormWidgets\Subcategorybox' => [
-    			'label' => 'Subcategorybox field',
-    			'code' => 'subcategorybox'
-    		]
-    	];
-    }
-
 
 
 }

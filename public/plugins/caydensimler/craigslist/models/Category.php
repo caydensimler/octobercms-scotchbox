@@ -26,7 +26,7 @@ class Category extends Model
      */
     public $table = 'caydensimler_craigslist_categories';
 
-    //  Relations
+    // Relations
 
     public $belongsToMany = [
         'posts' => [

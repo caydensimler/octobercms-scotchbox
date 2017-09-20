@@ -1,4 +1,4 @@
-1505849138a:1:{s:14:"categories.htm";a:10:{s:8:"fileName";s:14:"categories.htm";s:7:"content";s:1080:"title = "Categories"
+1505938377a:1:{s:14:"categories.htm";a:10:{s:8:"fileName";s:14:"categories.htm";s:7:"content";s:1081:"title = "Categories"
 url = "/:slug"
 layout = "default"
 is_hidden = 0
@@ -13,6 +13,7 @@ notFoundMessage = "Record not found"
 {% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
+
 
 {% if record %}
 
@@ -43,9 +44,10 @@ notFoundMessage = "Record not found"
 
 {% else %}
     {{ notFoundMessage }}
-{% endif %}";s:5:"mtime";i:1505838036;s:6:"markup";s:809:"{% set record = builderDetails.record %}
+{% endif %}";s:5:"mtime";i:1505925825;s:6:"markup";s:810:"{% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
+
 
 {% if record %}
 

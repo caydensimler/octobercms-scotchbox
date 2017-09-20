@@ -107,19 +107,19 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
 \t\t";
             // line 41
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["record"] ?? null), "sub_category", array()));
-            foreach ($context['_seq'] as $context["_key"] => $context["sub"]) {
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["record"] ?? null), "subcategories", array()));
+            foreach ($context['_seq'] as $context["_key"] => $context["subcategories"]) {
                 // line 42
                 echo "
 \t\t\t<div class=\"col-xs-12\">";
                 // line 43
-                echo twig_escape_filter($this->env, $this->getAttribute($context["sub"], "sub_category", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["subcategories"], "subcategory", array()), "html", null, true);
                 echo "</div>
 \t
 \t\t";
             }
             $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sub'], $context['_parent'], $context['loop']);
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['subcategories'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 46
             echo "\t</div>
@@ -199,9 +199,9 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
 \t<div class=\"col-xs-6 text-center\">
 \t\t<h3>Sub-Categories</h3>
 
-\t\t{% for sub in record.sub_category %}
+\t\t{% for subcategories in record.subcategories %}
 
-\t\t\t<div class=\"col-xs-12\">{{ sub.sub_category }}</div>
+\t\t\t<div class=\"col-xs-12\">{{ subcategories.subcategory }}</div>
 \t
 \t\t{% endfor %}
 \t</div>

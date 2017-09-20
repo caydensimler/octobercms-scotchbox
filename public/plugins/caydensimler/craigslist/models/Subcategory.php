@@ -5,7 +5,7 @@ use Model;
 /**
  * Model
  */
-class Subcategories extends Model
+class Subcategory extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
@@ -25,4 +25,14 @@ class Subcategories extends Model
      * @var string The database table used by the model.
      */
     public $table = 'caydensimler_craigslist_subcategories';
+
+    // Relations
+
+    public $belongsToMany = [
+        'posts' => [
+            'CaydenSimler\Craigslist\Models\Post',
+            'table' => 'caydensimler_craigslist_p_sc',
+            'order' => 'title'
+        ]
+    ];
 }

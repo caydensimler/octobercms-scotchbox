@@ -84,3 +84,21 @@
 1.0.29:
     - 'Created table caydensimler_craigslist_p_sc'
     - builder_table_create_caydensimler_craigslist_p_sc.php
+1.0.30:
+    - 'Updated table caydensimler_craigslist_post'
+    - builder_table_update_caydensimler_craigslist_post_9.php
+1.0.31:
+    - 'Updated table caydensimler_craigslist_post'
+    - builder_table_update_caydensimler_craigslist_post_10.php
+1.0.32:
+    - 'Drop table caydensimler_craigslist_p_sc'
+    - builder_table_delete_caydensimler_craigslist_p_sc.php
+1.0.33:
+    - 'Drop table caydensimler_craigslist_subcategories'
+    - builder_table_delete_caydensimler_craigslist_subcategories_2.php
+1.0.34:
+    - 'Created table caydensimler_craigslist_subcategories'
+    - builder_table_create_caydensimler_craigslist_subcategories_3.php
+1.0.35:
+    - 'Created table caydensimler_craigslist_p_sc'
+    - builder_table_create_caydensimler_craigslist_p_sc_2.php

@@ -1,0 +1,10 @@
+name: Subcategory
+form: $/caydensimler/craigslist/models/subcategory/fields.yaml
+modelClass: CaydenSimler\Craigslist\Models\Subcategory
+defaultRedirect: caydensimler/craigslist/subcategory
+create:
+    redirect: 'caydensimler/craigslist/subcategory/update/:id'
+    redirectClose: caydensimler/craigslist/subcategory
+update:
+    redirect: caydensimler/craigslist/subcategory
+    redirectClose: caydensimler/craigslist/subcategory

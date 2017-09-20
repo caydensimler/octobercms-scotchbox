@@ -1,6 +1,6 @@
 columns:
     subcategory:
-        label: 'Sub Category'
+        label: Subcategory
         type: text
         searchable: true
         sortable: true

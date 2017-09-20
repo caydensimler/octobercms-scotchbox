@@ -50,9 +50,9 @@ notFoundMessage = "Record not found"
 	<div class="col-xs-6 text-center">
 		<h3>Sub-Categories</h3>
 
-		{% for sub in record.sub_category %}
+		{% for subcategories in record.subcategories %}
 
-			<div class="col-xs-12">{{ sub.sub_category }}</div>
+			<div class="col-xs-12">{{ subcategories.subcategory }}</div>
 	
 		{% endfor %}
 	</div>

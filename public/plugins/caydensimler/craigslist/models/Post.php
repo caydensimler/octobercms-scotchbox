@@ -26,10 +26,6 @@ class Post extends Model
      */
     public $table = 'caydensimler_craigslist_post';
 
-
-    protected $jsonable = ['sub_category'];
-
-
     //  Relations
 
     public $belongsToMany = [
@@ -37,6 +33,11 @@ class Post extends Model
             'CaydenSimler\Craigslist\Models\Category',
             'table' => 'caydensimler_craigslist_p_c',
             'order' => 'category_title'
+        ],
+        'subcategories' => [
+            'CaydenSimler\Craigslist\Models\Subcategory',
+            'table' => 'caydensimler_craigslist_p_sc',
+            'order' => 'subcategory'
         ]
     ];
 

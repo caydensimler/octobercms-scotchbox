@@ -1,6 +1,6 @@
 fields:
     subcategory:
-        label: 'Sub Category'
+        label: Subcategory
         span: auto
         oc.commentPosition: ''
         type: text
