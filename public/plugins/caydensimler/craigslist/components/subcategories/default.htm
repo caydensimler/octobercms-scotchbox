@@ -1,0 +1,8 @@
+{% set subcategories = __SELF__.subcategories %}
+
+
+<ul>
+	{% for subcategory in subcategories %}
+		<li>{{ subcategory.subcategory }}</li>
+	{% endfor %}
+</ul>

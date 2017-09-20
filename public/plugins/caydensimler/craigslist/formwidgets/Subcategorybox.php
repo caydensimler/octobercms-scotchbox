@@ -52,9 +52,6 @@ class SubcategoryBox extends FormWidgetBase {
 
 		}
 
-		// dd($subcategories);
-
-
 		return $newArray;
 	}
 

@@ -4,8 +4,11 @@ use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
-    public function registerComponents()
-    {
+    public function registerComponents() {
+
+        return [
+            'CaydenSimler\Craigslist\Components\Subcategories' => 'subcategories'
+        ];
     }
 
     public function registerFormWidgets() {

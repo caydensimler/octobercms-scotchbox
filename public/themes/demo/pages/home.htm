@@ -11,6 +11,10 @@ noRecordsMessage = "No records found"
 detailsPage = "-"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
+
+[subcategories]
+results = 0
+sortOrder = "name desc"
 ==
 {% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
@@ -57,3 +61,5 @@ pageNumber = "{{ :page }}"
         {% endif %}
     </ul>
 {% endif %}
+
+{% component 'subcategories' %}

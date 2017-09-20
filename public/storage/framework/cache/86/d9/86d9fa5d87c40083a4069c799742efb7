@@ -1,4 +1,4 @@
-1505938377a:1:{s:8:"home.htm";a:10:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:2100:"title = "Homepage"
+1505941280a:1:{s:8:"home.htm";a:11:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:2174:"title = "Homepage"
 url = "/"
 layout = "default"
 is_hidden = 0
@@ -11,6 +11,10 @@ noRecordsMessage = "No records found"
 detailsPage = "-"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
+
+[subcategories]
+results = 0
+sortOrder = "name desc"
 ==
 {% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
@@ -56,7 +60,9 @@ pageNumber = "{{ :page }}"
             <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
         {% endif %}
     </ul>
-{% endif %}";s:5:"mtime";i:1505837077;s:6:"markup";s:1796:"{% set records = builderList.records %}
+{% endif %}
+
+{% component 'subcategories' %}";s:5:"mtime";i:1505940679;s:6:"markup";s:1831:"{% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
 {% set noRecordsMessage = builderList.noRecordsMessage %}
 {% set detailsPage = builderList.detailsPage %}
@@ -100,4 +106,6 @@ pageNumber = "{{ :page }}"
             <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
         {% endif %}
     </ul>
-{% endif %}";s:4:"code";N;s:5:"title";s:8:"Homepage";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:7:{s:10:"modelClass";s:39:"CaydenSimler\Craigslist\Models\Category";s:5:"scope";s:1:"-";s:13:"displayColumn";s:14:"category_title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}}}
+{% endif %}
+
+{% component 'subcategories' %}";s:4:"code";N;s:5:"title";s:8:"Homepage";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:7:{s:10:"modelClass";s:39:"CaydenSimler\Craigslist\Models\Category";s:5:"scope";s:1:"-";s:13:"displayColumn";s:14:"category_title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}s:13:"subcategories";a:2:{s:7:"results";s:1:"0";s:9:"sortOrder";s:9:"name desc";}}}

@@ -140,6 +140,13 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
             echo "    </ul>
 ";
         }
+        // line 46
+        echo "
+";
+        // line 47
+        $context['__cms_component_params'] = [];
+        echo $this->env->getExtension('CMS')->componentFunction("subcategories"        , $context['__cms_component_params']        );
+        unset($context['__cms_component_params']);
     }
 
     public function getTemplateName()
@@ -154,7 +161,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
 
     public function getDebugInfo()
     {
-        return array (  140 => 44,  134 => 42,  132 => 41,  129 => 40,  118 => 37,  113 => 36,  109 => 35,  106 => 34,  100 => 32,  98 => 31,  95 => 30,  93 => 29,  89 => 27,  80 => 25,  74 => 23,  71 => 22,  67 => 20,  65 => 19,  58 => 17,  55 => 16,  49 => 14,  46 => 13,  43 => 12,  40 => 10,  35 => 9,  31 => 7,  29 => 6,  27 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  147 => 47,  144 => 46,  140 => 44,  134 => 42,  132 => 41,  129 => 40,  118 => 37,  113 => 36,  109 => 35,  106 => 34,  100 => 32,  98 => 31,  95 => 30,  93 => 29,  89 => 27,  80 => 25,  74 => 23,  71 => 22,  67 => 20,  65 => 19,  58 => 17,  55 => 16,  49 => 14,  46 => 13,  43 => 12,  40 => 10,  35 => 9,  31 => 7,  29 => 6,  27 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -211,6 +218,8 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
             <li><a href=\"{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}\">Next &rarr;</a></li>
         {% endif %}
     </ul>
-{% endif %}", "/var/www/public/themes/demo/pages/home.htm", "");
+{% endif %}
+
+{% component 'subcategories' %}", "/var/www/public/themes/demo/pages/home.htm", "");
     }
 }
