@@ -3,6 +3,28 @@
 
 /* Posts Page */
 
+  .postsBody {
+    background-color: #CFD3D3;
+    border: 20px solid white;
+    padding-bottom: 10px;
+  }
+
+  .postsBody:hover {
+    background-color: #C5C9C9;
+    cursor: pointer;
+  }
+
+  .postsDetails {
+    color: black;
+  }
+
+  .fillerImage {
+    width: 200px;
+    height: 200px;
+  }
+
+/* Single-Post Page */
+
   .postTitle {
     font-size: 30px;
     color: black;
@@ -11,11 +33,12 @@
 
   .postPrice {
     font-size: 20px;
+    color: black;
   }
 
   .postBody {
     font-size: 15px;
-    background-color: #E5D5CC;
+    background-color: #CFD3D3;
   }
 
   .postContactBorder {
@@ -23,9 +46,14 @@
   }
 
   .postImageGallery {
-    background-color: #E5D5CC;
+    background-color: #CFD3D3;
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+
+  .categoryBox {
+    max-height: 200px;
+    overflow-x: auto;
   }
 
 /* Categories Page */
@@ -38,6 +66,28 @@
     font-size: 20px;
     padding: 10px;
   }
+
+
+/* Contact Form Page */
+
+  .contactFormHeader {
+    font-size: 20px;
+  }
+
+  .contactContainer {
+    padding: 50px;
+    font-size: 30px;
+  }
+
+  .contactButton {
+    font-size: 20px;
+  }
+
+  .contactButton:hover {
+    background-color: #AAAAAA;
+    border: 1px solid black;
+  }
+
 
 
 

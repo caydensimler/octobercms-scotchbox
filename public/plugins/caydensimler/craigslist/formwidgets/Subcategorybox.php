@@ -35,15 +35,30 @@ class SubcategoryBox extends FormWidgetBase {
 
 	}
 
+	public function slugify($text) {
+		$text = preg_replace('~[^\pL\d]+~u', '-', $text);
+		$text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+		$text = preg_replace('~[^-\w]+~', '', $text);
+		$text = str_replace("/", "\\\\", $text);
+		$text = trim($text, '-');
+		$text = preg_replace('~-+~', '', $text);
+		$text = strtolower($text);
+		if (empty($text)) {
+			return 'n-a';
+		}
+		return $text;
+	}
+
 	public function getSaveValue($subcategories){
 
 		$newArray = [];
-		foreach ($subcategories as $subcategoryID) {
+		foreach ((array) $subcategories as $subcategoryID) {
 			
 			if (!is_numeric($subcategoryID)) {
 				$newSubcategory = new Subcategory;
 
 				$newSubcategory->subcategory = $subcategoryID;
+				$newSubcategory->slug = $this->slugify($subcategoryID);
 				$newSubcategory->save();
 				$newArray[] = $newSubcategory->id;
 			} else {

@@ -102,3 +102,6 @@
 1.0.35:
     - 'Created table caydensimler_craigslist_p_sc'
     - builder_table_create_caydensimler_craigslist_p_sc_2.php
+1.0.36:
+    - 'Updated table caydensimler_craigslist_subcategories'
+    - builder_table_update_caydensimler_craigslist_subcategories.php

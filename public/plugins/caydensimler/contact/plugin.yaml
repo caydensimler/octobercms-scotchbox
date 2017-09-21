@@ -1,0 +1,6 @@
+plugin:
+    name: 'caydensimler.contact::lang.plugin.name'
+    description: 'caydensimler.contact::lang.plugin.description'
+    author: 'Cayden Simler'
+    icon: oc-icon-adjust
+    homepage: ''

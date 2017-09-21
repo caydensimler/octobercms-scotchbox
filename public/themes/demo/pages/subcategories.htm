@@ -1,0 +1,46 @@
+title = "Subcategories"
+url = "/subcategory/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "CaydenSimler\Craigslist\Models\Subcategory"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "subcategory"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+
+     <div class="col-xs-12 text-center postTitle">
+    	{{ attribute(record, displayColumn) }}
+    </div>
+
+    {% for post in record.posts %}
+
+	    <div class="col-xs-6 text-center">
+
+			<div class="col-xs-12 postTitle">
+				<a href="/post/{{ post.slug }}">
+				{{ post.title|length > 25 ? post.title|slice(0, 25) ~ '...' : post.title }}</a>
+			</div>
+
+			<div class="col-xs-12 postPrice">
+				${{ post.price }}
+			</div>
+
+	        <div class="col-xs-12 text-center">
+	            <img src="{{ post.image.thumb(200, 200, {'mode':'crop'})  }}">
+	        </div>
+
+	    </div>
+
+	{% endfor %}
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

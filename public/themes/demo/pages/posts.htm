@@ -25,7 +25,7 @@ pageNumber = "{{ :page }}"
 
 <div class="col-xs-12">
     {% for record in records %}
-        <div class="col-xs-6 text-center">
+        <div class="col-xs-6 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -34,17 +34,24 @@ pageNumber = "{{ :page }}"
 
                 <div class="col-xs-12 postTitle">{{ record.title|length > 25 ? record.title|slice(0, 25) ~ '...' : record.title }}</div>
 
+                <div class="col-xs-12 postPrice">${{ record.price }}</div>
+
+                <div class="col-xs-12 text-center">
+
+                    {% if record.image is empty %}
+                        <img src="/storage/app/media/filler_image.jpg" alt="filler image">
+                    {% else %}
+                        <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
+                    {% endif %}
+                </div>
+
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 50) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>
                 {% endif %}
             {% endspaceless %}
         
-            <div class="col-xs-12 postPrice">${{ record.price }}</div>
-
-            <div class="col-xs-12 text-center">
-                <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
-            </div>
             
         </div>
     {% else %}

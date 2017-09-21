@@ -1,4 +1,4 @@
-1506008409a:1:{s:9:"posts.htm";a:10:{s:8:"fileName";s:9:"posts.htm";s:7:"content";s:2701:"title = "Posts"
+1506026265a:1:{s:9:"posts.htm";a:10:{s:8:"fileName";s:9:"posts.htm";s:7:"content";s:3043:"title = "Posts"
 url = "/posts/:page?"
 layout = "default"
 is_hidden = 0
@@ -25,7 +25,7 @@ pageNumber = "{{ :page }}"
 
 <div class="col-xs-12">
     {% for record in records %}
-        <div class="col-xs-6 text-center">
+        <div class="col-xs-6 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -34,17 +34,24 @@ pageNumber = "{{ :page }}"
 
                 <div class="col-xs-12 postTitle">{{ record.title|length > 25 ? record.title|slice(0, 25) ~ '...' : record.title }}</div>
 
+                <div class="col-xs-12 postPrice">${{ record.price }}</div>
+
+                <div class="col-xs-12 text-center">
+
+                    {% if record.image is empty %}
+                        <img src="/storage/app/media/filler_image.jpg" alt="filler image">
+                    {% else %}
+                        <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
+                    {% endif %}
+                </div>
+
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 50) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>
                 {% endif %}
             {% endspaceless %}
         
-            <div class="col-xs-12 postPrice">${{ record.price }}</div>
-
-            <div class="col-xs-12 text-center">
-                <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
-            </div>
             
         </div>
     {% else %}
@@ -68,7 +75,7 @@ pageNumber = "{{ :page }}"
             <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
         {% endif %}
     </ul>
-{% endif %}";s:5:"mtime";i:1505925386;s:6:"markup";s:2341:"{% set records = builderList.records %}
+{% endif %}";s:5:"mtime";i:1506015104;s:6:"markup";s:2683:"{% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
 {% set noRecordsMessage = builderList.noRecordsMessage %}
 {% set detailsPage = builderList.detailsPage %}
@@ -79,7 +86,7 @@ pageNumber = "{{ :page }}"
 
 <div class="col-xs-12">
     {% for record in records %}
-        <div class="col-xs-6 text-center">
+        <div class="col-xs-6 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -88,17 +95,24 @@ pageNumber = "{{ :page }}"
 
                 <div class="col-xs-12 postTitle">{{ record.title|length > 25 ? record.title|slice(0, 25) ~ '...' : record.title }}</div>
 
+                <div class="col-xs-12 postPrice">${{ record.price }}</div>
+
+                <div class="col-xs-12 text-center">
+
+                    {% if record.image is empty %}
+                        <img src="/storage/app/media/filler_image.jpg" alt="filler image">
+                    {% else %}
+                        <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
+                    {% endif %}
+                </div>
+
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 50) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>
                 {% endif %}
             {% endspaceless %}
         
-            <div class="col-xs-12 postPrice">${{ record.price }}</div>
-
-            <div class="col-xs-12 text-center">
-                <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
-            </div>
             
         </div>
     {% else %}

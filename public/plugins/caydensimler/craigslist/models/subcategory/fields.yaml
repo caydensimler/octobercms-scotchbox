@@ -4,3 +4,11 @@ fields:
         span: auto
         oc.commentPosition: ''
         type: text
+    slug:
+        label: Slug
+        span: auto
+        oc.commentPosition: ''
+        preset:
+            field: subcategory
+            type: slug
+        type: text

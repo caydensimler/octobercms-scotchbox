@@ -1,4 +1,4 @@
-1506008409a:1:{s:15:"post-single.htm";a:10:{s:8:"fileName";s:15:"post-single.htm";s:7:"content";s:1441:"title = "Post single"
+1506026265a:1:{s:15:"post-single.htm";a:10:{s:8:"fileName";s:15:"post-single.htm";s:7:"content";s:1626:"title = "Post single"
 url = "/post/:slug"
 layout = "default"
 is_hidden = 0
@@ -37,29 +37,33 @@ notFoundMessage = "Record not found"
 		{{ record.body|raw }}
 	</div>
 
-	<div class="col-xs-6 text-center">
+	<div class="col-xs-12 col-md-6 text-center">
 		<h3>Categories</h3>
 
-		{% for category in record.categories %}
-			<a href="/{{ category.slug }}">{{ category.category_title }}</a>
-			<br>
-		{% endfor %}
+		<div class="col-xs-12 categoryBox">
+			{% for category in record.categories %}
+				<a href="/{{ category.slug }}">{{ category.category_title }}</a>
+				<br>
+			{% endfor %}
+		</div>
 	</div>
 
 
-	<div class="col-xs-6 text-center">
+	<div class="col-xs-12 col-md-6 text-center">
 		<h3>Sub-Categories</h3>
 
-		{% for subcategories in record.subcategories %}
-
-			<div class="col-xs-12">{{ subcategories.subcategory }}</div>
-	
-		{% endfor %}
+		<div class="col-xs-12 categoryBox">
+			{% for subcategories in record.subcategories %}
+				<div class="col-xs-12">
+					<a href="/subcategory/{{ subcategories.slug }}">{{ subcategories.subcategory }}</a>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 
 {% else %}
     {{ notFoundMessage }}
-{% endif %}";s:5:"mtime";i:1505933920;s:6:"markup";s:1165:"{% set record = builderDetails.record %}
+{% endif %}";s:5:"mtime";i:1506015904;s:6:"markup";s:1350:"{% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
@@ -86,24 +90,28 @@ notFoundMessage = "Record not found"
 		{{ record.body|raw }}
 	</div>
 
-	<div class="col-xs-6 text-center">
+	<div class="col-xs-12 col-md-6 text-center">
 		<h3>Categories</h3>
 
-		{% for category in record.categories %}
-			<a href="/{{ category.slug }}">{{ category.category_title }}</a>
-			<br>
-		{% endfor %}
+		<div class="col-xs-12 categoryBox">
+			{% for category in record.categories %}
+				<a href="/{{ category.slug }}">{{ category.category_title }}</a>
+				<br>
+			{% endfor %}
+		</div>
 	</div>
 
 
-	<div class="col-xs-6 text-center">
+	<div class="col-xs-12 col-md-6 text-center">
 		<h3>Sub-Categories</h3>
 
-		{% for subcategories in record.subcategories %}
-
-			<div class="col-xs-12">{{ subcategories.subcategory }}</div>
-	
-		{% endfor %}
+		<div class="col-xs-12 categoryBox">
+			{% for subcategories in record.subcategories %}
+				<div class="col-xs-12">
+					<a href="/subcategory/{{ subcategories.slug }}">{{ subcategories.subcategory }}</a>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 
 {% else %}

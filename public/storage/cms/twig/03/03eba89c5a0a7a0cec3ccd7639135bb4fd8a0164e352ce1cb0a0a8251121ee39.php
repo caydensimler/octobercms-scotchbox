@@ -29,7 +29,7 @@ class __TwigTemplate_9263d241fb6c99789fa6c62ecc10d1127b51cd12705218446ef4a2a656e
             <a class=\"navbar-brand\" href=\"";
         // line 11
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("home");
-        echo "\">OctoberCMS: Craigslist Clone</a>
+        echo "\">Craigslist Clone</a>
         </div>
         <div class=\"collapse navbar-collapse navbar-main-collapse\">
             <ul class=\"nav navbar-nav\">
@@ -118,7 +118,7 @@ class __TwigTemplate_9263d241fb6c99789fa6c62ecc10d1127b51cd12705218446ef4a2a656e
                 <span class=\"icon-bar\"></span>
                 <span class=\"icon-bar\"></span>
             </button>
-            <a class=\"navbar-brand\" href=\"{{ 'home'|page }}\">OctoberCMS: Craigslist Clone</a>
+            <a class=\"navbar-brand\" href=\"{{ 'home'|page }}\">Craigslist Clone</a>
         </div>
         <div class=\"collapse navbar-collapse navbar-main-collapse\">
             <ul class=\"nav navbar-nav\">
