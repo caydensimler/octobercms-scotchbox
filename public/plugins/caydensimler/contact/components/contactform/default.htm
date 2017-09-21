@@ -2,12 +2,12 @@
 
 	<div class="contactContainer">
 		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Name</label>
-		<input type="text" name="name" class="col-xs-offset-2 col-xs-8">
+		<input type="text" name="name" class="col-xs-offset-2 col-xs-8" placeholder="{{ errors.first('name') }}">
 	</div>
 
 	<div class="contactContainer">
 		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Email</label>
-		<input type="text" name="email" class="col-xs-offset-2 col-xs-8">
+		<input type="text" name="email" class="col-xs-offset-2 col-xs-8" placeholder="{{ errors.first('email') }}">
 	</div>
 
 	<div class="contactContainer">
@@ -18,5 +18,12 @@
 	<div class="col-xs-12 text-center contactContainer">
 		<button type="submit" class="btn btn-secondary contactButton">Send</button>
 	</div>
+
+	<div class="col-xs-12">
+		{% for error in errors.all() %}
+			<!-- <div class="contactPageError text-center">{{ error }}</li> -->
+		{% endfor %}
+	</div>
+	
 
 </form>
