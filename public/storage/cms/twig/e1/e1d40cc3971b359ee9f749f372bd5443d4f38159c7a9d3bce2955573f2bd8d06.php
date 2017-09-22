@@ -169,7 +169,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
             // line 60
-            echo "        <div class=\"col-xs-12 col-md-6 text-center postsBody\">
+            echo "        <div class=\"col-xs-12 col-md-6 col-lg-4 text-center postsBody\">
             ";
             // line 62
             echo "            ";
@@ -215,7 +215,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
 
                 <div class=\"col-xs-12 postsDetails\">";
             // line 80
-            echo call_user_func_array($this->env->getFunction('html_limit')->getCallable(), array("limit", $this->getAttribute($context["record"], "body", array()), 50));
+            echo call_user_func_array($this->env->getFunction('html_limit')->getCallable(), array("limit", $this->getAttribute($context["record"], "body", array()), 45));
             echo "</div>
 
                 ";
@@ -333,7 +333,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
 
 <div class=\"col-xs-8 postsHolderMain\">
     {% for record in records %}
-        <div class=\"col-xs-12 col-md-6 text-center postsBody\">
+        <div class=\"col-xs-12 col-md-6 col-lg-4 text-center postsBody\">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -353,7 +353,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
                     {% endif %}
                 </div>
 
-                <div class=\"col-xs-12 postsDetails\">{{ html_limit(record.body, 50) | raw }}</div>
+                <div class=\"col-xs-12 postsDetails\">{{ html_limit(record.body, 45) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>

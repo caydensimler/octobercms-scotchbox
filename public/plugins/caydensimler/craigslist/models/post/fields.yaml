@@ -67,3 +67,11 @@ fields:
         label: Subcategories
         span: full
         type: subcategorybox
+    created_at:
+        label: 'Today''s Date'
+        span: full
+        oc.commentPosition: ''
+        mode: datetime
+        required: 1
+        placeholder: ''
+        type: datepicker

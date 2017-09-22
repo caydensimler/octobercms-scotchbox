@@ -14,3 +14,13 @@ columns:
     contact_email:
         label: 'Contact Email'
         type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime
+        sortable: true

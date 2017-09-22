@@ -1,4 +1,4 @@
-1506098327a:1:{s:8:"home.htm";a:12:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:4279:"title = "Homepage"
+1506099236a:1:{s:8:"home.htm";a:12:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:4302:"title = "Homepage"
 url = "/"
 layout = "default"
 is_hidden = 0
@@ -28,6 +28,8 @@ detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
 recordsPerPage = 6
 pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "desc"
 ==
 {% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
@@ -88,7 +90,7 @@ pageNumber = "{{ :page }}"
 
 <div class="col-xs-8 postsHolderMain">
     {% for record in records %}
-        <div class="col-xs-12 col-md-6 text-center postsBody">
+        <div class="col-xs-12 col-md-6 col-lg-4 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -108,7 +110,7 @@ pageNumber = "{{ :page }}"
                     {% endif %}
                 </div>
 
-                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 50) | raw }}</div>
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 45) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>
@@ -120,9 +122,7 @@ pageNumber = "{{ :page }}"
     {% else %}
         <li class="no-data">{{ noRecordsMessage }}</li>
     {% endfor %}
-</div>
-
-";s:5:"mtime";i:1506097725;s:6:"markup";s:3567:"{% set records = builderList.records %}
+</div>";s:5:"mtime";i:1506098634;s:6:"markup";s:3576:"{% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
 {% set noRecordsMessage = builderList.noRecordsMessage %}
 {% set detailsPage = builderList.detailsPage %}
@@ -181,7 +181,7 @@ pageNumber = "{{ :page }}"
 
 <div class="col-xs-8 postsHolderMain">
     {% for record in records %}
-        <div class="col-xs-12 col-md-6 text-center postsBody">
+        <div class="col-xs-12 col-md-6 col-lg-4 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -201,7 +201,7 @@ pageNumber = "{{ :page }}"
                     {% endif %}
                 </div>
 
-                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 50) | raw }}</div>
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 45) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>
@@ -213,4 +213,4 @@ pageNumber = "{{ :page }}"
     {% else %}
         <li class="no-data">{{ noRecordsMessage }}</li>
     {% endfor %}
-</div>";s:4:"code";N;s:5:"title";s:8:"Homepage";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:39:"CaydenSimler\Craigslist\Models\Category";s:5:"scope";s:1:"-";s:13:"displayColumn";s:14:"category_title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";s:10:"sortColumn";s:14:"category_title";s:13:"sortDirection";s:3:"asc";}s:13:"subcategories";a:2:{s:7:"results";s:1:"0";s:9:"sortOrder";s:9:"name desc";}s:24:"builderList builderList2";a:9:{s:10:"modelClass";s:35:"CaydenSimler\Craigslist\Models\Post";s:5:"scope";s:1:"-";s:13:"displayColumn";s:5:"title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:11:"post-single";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:14:"recordsPerPage";s:1:"6";s:10:"pageNumber";s:11:"{{ :page }}";}}}
+</div>";s:4:"code";N;s:5:"title";s:8:"Homepage";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:39:"CaydenSimler\Craigslist\Models\Category";s:5:"scope";s:1:"-";s:13:"displayColumn";s:14:"category_title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";s:10:"sortColumn";s:14:"category_title";s:13:"sortDirection";s:3:"asc";}s:13:"subcategories";a:2:{s:7:"results";s:1:"0";s:9:"sortOrder";s:9:"name desc";}s:24:"builderList builderList2";a:11:{s:10:"modelClass";s:35:"CaydenSimler\Craigslist\Models\Post";s:5:"scope";s:1:"-";s:13:"displayColumn";s:5:"title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:11:"post-single";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:14:"recordsPerPage";s:1:"6";s:10:"pageNumber";s:11:"{{ :page }}";s:10:"sortColumn";s:10:"created_at";s:13:"sortDirection";s:4:"desc";}}}

@@ -28,6 +28,8 @@ detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
 recordsPerPage = 6
 pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "desc"
 ==
 {% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
@@ -88,7 +90,7 @@ pageNumber = "{{ :page }}"
 
 <div class="col-xs-8 postsHolderMain">
     {% for record in records %}
-        <div class="col-xs-12 col-md-6 text-center postsBody">
+        <div class="col-xs-12 col-md-6 col-lg-4 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -108,7 +110,7 @@ pageNumber = "{{ :page }}"
                     {% endif %}
                 </div>
 
-                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 50) | raw }}</div>
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 45) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>
@@ -121,4 +123,3 @@ pageNumber = "{{ :page }}"
         <li class="no-data">{{ noRecordsMessage }}</li>
     {% endfor %}
 </div>
-
