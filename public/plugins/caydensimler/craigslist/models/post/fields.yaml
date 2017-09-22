@@ -41,8 +41,8 @@ fields:
         thumbOptions:
             mode: crop
             extension: auto
-        imageWidth: '100'
-        imageHeight: '100'
+        imageWidth: '50'
+        imageHeight: '50'
         type: fileupload
     image_gallery:
         label: 'Image Gallery'
@@ -67,4 +67,3 @@ fields:
         label: Subcategories
         span: full
         type: subcategorybox
-

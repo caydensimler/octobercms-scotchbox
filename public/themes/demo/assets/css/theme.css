@@ -37,6 +37,12 @@
     color: black;
   }
 
+  .postsHolderMain {
+    max-height: 94vh;
+    overflow-x: auto;
+  }
+
+
   .fillerImage {
     width: 200px;
     height: 200px;

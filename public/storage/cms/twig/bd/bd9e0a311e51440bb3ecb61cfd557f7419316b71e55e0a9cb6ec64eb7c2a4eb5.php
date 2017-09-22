@@ -76,7 +76,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
             } else {
                 // line 28
                 echo "                        <img src=\"";
-                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["record"], "image", array()), "thumb", array(0 => 200, 1 => 200, 2 => array("mode" => "crop")), "method"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["record"], "image", array()), "thumb", array(0 => 100, 1 => 100, 2 => array("mode" => "crop")), "method"), "html", null, true);
                 echo "\">
                     ";
             }
@@ -224,7 +224,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
                     {% if record.image is empty %}
                         <img src=\"/storage/app/media/filler_image.jpg\" alt=\"filler image\">
                     {% else %}
-                        <img src=\"{{ record.image.thumb(200, 200, {'mode':'crop'})  }}\">
+                        <img src=\"{{ record.image.thumb(100, 100, {'mode':'crop'})  }}\">
                     {% endif %}
                 </div>
 

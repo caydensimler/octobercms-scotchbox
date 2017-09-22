@@ -41,7 +41,7 @@ pageNumber = "{{ :page }}"
                     {% if record.image is empty %}
                         <img src="/storage/app/media/filler_image.jpg" alt="filler image">
                     {% else %}
-                        <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
+                        <img src="{{ record.image.thumb(100, 100, {'mode':'crop'})  }}">
                     {% endif %}
                 </div>
 
