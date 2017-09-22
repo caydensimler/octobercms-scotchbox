@@ -14,10 +14,10 @@
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Categories List</a></li>
-                <li class="{% if this.page.id == 'posts' %}active{% endif %}"><a href="{{ 'posts'|page }}">All Posts</a></li>
+                <li class="{% if this.page.id == 'posts' %}active{% endif %}"><a href="{{ 'posts'|page }}">All</a></li>
 
                 {% if user %}
+                    <li class="{% if this.page.id == 'create' %}active{% endif %}"><a href="{{ 'create'|page }}">Create</a></li>
                     <li class="{% if this.page.id == 'login' %}active{% endif %}"><a href="{{ 'login'|page }}">Account</a></li>
                     <li><a data-request="onLogout" data-request-data="redirect: '/'">Sign Out</a></li>
                 {% else %}

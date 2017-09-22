@@ -1,4 +1,4 @@
-1506111220a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1574:"==
+1506113253a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1567:"==
 <!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
@@ -14,10 +14,10 @@
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Categories List</a></li>
-                <li class="{% if this.page.id == 'posts' %}active{% endif %}"><a href="{{ 'posts'|page }}">All Posts</a></li>
+                <li class="{% if this.page.id == 'posts' %}active{% endif %}"><a href="{{ 'posts'|page }}">All</a></li>
 
                 {% if user %}
+                    <li class="{% if this.page.id == 'create' %}active{% endif %}"><a href="{{ 'create'|page }}">Create</a></li>
                     <li class="{% if this.page.id == 'login' %}active{% endif %}"><a href="{{ 'login'|page }}">Account</a></li>
                     <li><a data-request="onLogout" data-request-data="redirect: '/'">Sign Out</a></li>
                 {% else %}
@@ -28,7 +28,7 @@
         </div>
     </div>
 </nav>
-";s:5:"mtime";i:1506013230;s:6:"markup";s:1568:"<!-- Nav -->
+";s:5:"mtime";i:1506112652;s:6:"markup";s:1561:"<!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -43,10 +43,10 @@
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Categories List</a></li>
-                <li class="{% if this.page.id == 'posts' %}active{% endif %}"><a href="{{ 'posts'|page }}">All Posts</a></li>
+                <li class="{% if this.page.id == 'posts' %}active{% endif %}"><a href="{{ 'posts'|page }}">All</a></li>
 
                 {% if user %}
+                    <li class="{% if this.page.id == 'create' %}active{% endif %}"><a href="{{ 'create'|page }}">Create</a></li>
                     <li class="{% if this.page.id == 'login' %}active{% endif %}"><a href="{{ 'login'|page }}">Account</a></li>
                     <li><a data-request="onLogout" data-request-data="redirect: '/'">Sign Out</a></li>
                 {% else %}
