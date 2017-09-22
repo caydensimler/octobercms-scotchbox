@@ -1,4 +1,4 @@
-1506113253a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1567:"==
+1506114169a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1580:"==
 <!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
@@ -9,12 +9,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ 'home'|page }}">Craigslist Clone</a>
+            <a class="navbar-brand" href="{{ 'home'|page }}">Craigslist Clone - Home</a>
         </div>
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'posts' %}active{% endif %}"><a href="{{ 'posts'|page }}">All</a></li>
+                <li class="{% if this.page.id == 'posts' %}active{% endif %}"><a href="{{ 'posts'|page }}">All Posts</a></li>
 
                 {% if user %}
                     <li class="{% if this.page.id == 'create' %}active{% endif %}"><a href="{{ 'create'|page }}">Create</a></li>
@@ -28,7 +28,7 @@
         </div>
     </div>
 </nav>
-";s:5:"mtime";i:1506112652;s:6:"markup";s:1561:"<!-- Nav -->
+";s:5:"mtime";i:1506112939;s:6:"markup";s:1574:"<!-- Nav -->
 <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -38,12 +38,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ 'home'|page }}">Craigslist Clone</a>
+            <a class="navbar-brand" href="{{ 'home'|page }}">Craigslist Clone - Home</a>
         </div>
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'posts' %}active{% endif %}"><a href="{{ 'posts'|page }}">All</a></li>
+                <li class="{% if this.page.id == 'posts' %}active{% endif %}"><a href="{{ 'posts'|page }}">All Posts</a></li>
 
                 {% if user %}
                     <li class="{% if this.page.id == 'create' %}active{% endif %}"><a href="{{ 'create'|page }}">Create</a></li>
