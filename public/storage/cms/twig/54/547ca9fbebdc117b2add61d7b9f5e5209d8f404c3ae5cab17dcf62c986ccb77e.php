@@ -1,7 +1,7 @@
 <?php
 
-/* /var/www/public/themes/demo/pages/categories.htm */
-class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b6528fce extends Twig_Template
+/* /var/www/public/themes/demo/pages/subcategories.htm */
+class __TwigTemplate_964c3a99d0b231f4904f581825101b24df5822fe9284776aeaa1751ff37b53f7 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -23,62 +23,51 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
         $context["notFoundMessage"] = $this->getAttribute(($context["builderDetails"] ?? null), "notFoundMessage", array());
         // line 4
         echo "
-
 ";
-        // line 6
+        // line 5
         if (($context["record"] ?? null)) {
-            // line 7
+            // line 6
             echo "
-    <div class=\"col-xs-12 text-center postTitle\">
+     <div class=\"col-xs-12 text-center postTitle\">
     \t";
-            // line 9
+            // line 8
             echo twig_escape_filter($this->env, $this->getAttribute(($context["record"] ?? null), ($context["displayColumn"] ?? null)), "html", null, true);
             echo "
     </div>
 
     ";
-            // line 12
+            // line 11
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["record"] ?? null), "posts", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-                // line 13
+                // line 12
                 echo "
 \t    <div class=\"col-xs-6 text-center\">
 
 \t\t\t<div class=\"col-xs-12 postTitle\">
 \t\t\t\t<a href=\"/post/";
-                // line 17
+                // line 16
                 echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "slug", array()), "html", null, true);
                 echo "\">
 \t\t\t\t";
-                // line 18
+                // line 17
                 echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute($context["post"], "title", array())) > 25)) ? ((twig_slice($this->env, $this->getAttribute($context["post"], "title", array()), 0, 25) . "...")) : ($this->getAttribute($context["post"], "title", array()))), "html", null, true);
                 echo "</a>
 \t\t\t</div>
 
 \t\t\t<div class=\"col-xs-12 postPrice\">
 \t\t\t\t\$";
-                // line 22
+                // line 21
                 echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "price", array()), "html", null, true);
                 echo "
 \t\t\t</div>
 
 \t        <div class=\"col-xs-12 text-center\">
-\t           \t";
-                // line 26
-                if (twig_test_empty($this->getAttribute($context["post"], "image", array()))) {
-                    // line 27
-                    echo "                    <img src=\"/storage/app/media/filler_image.jpg\" alt=\"filler image\">
-                ";
-                } else {
-                    // line 29
-                    echo "                    <img src=\"";
-                    echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["post"], "image", array()), "thumb", array(0 => 200, 1 => 200, 2 => array("mode" => "crop")), "method"), "html", null, true);
-                    echo "\">
-                ";
-                }
-                // line 31
-                echo "\t        </div>
+\t            <img src=\"";
+                // line 25
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["post"], "image", array()), "thumb", array(0 => 200, 1 => 200, 2 => array("mode" => "crop")), "method"), "html", null, true);
+                echo "\">
+\t        </div>
 
 \t    </div>
 
@@ -87,11 +76,11 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 36
+            // line 31
             echo "
 ";
         } else {
-            // line 38
+            // line 33
             echo "    ";
             echo twig_escape_filter($this->env, ($context["notFoundMessage"] ?? null), "html", null, true);
             echo "
@@ -101,7 +90,7 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
 
     public function getTemplateName()
     {
-        return "/var/www/public/themes/demo/pages/categories.htm";
+        return "/var/www/public/themes/demo/pages/subcategories.htm";
     }
 
     public function isTraitable()
@@ -111,7 +100,7 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
 
     public function getDebugInfo()
     {
-        return array (  95 => 38,  91 => 36,  81 => 31,  75 => 29,  71 => 27,  69 => 26,  62 => 22,  55 => 18,  51 => 17,  45 => 13,  41 => 12,  35 => 9,  31 => 7,  29 => 6,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  84 => 33,  80 => 31,  68 => 25,  61 => 21,  54 => 17,  50 => 16,  44 => 12,  40 => 11,  34 => 8,  30 => 6,  28 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -128,10 +117,9 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
-
 {% if record %}
 
-    <div class=\"col-xs-12 text-center postTitle\">
+     <div class=\"col-xs-12 text-center postTitle\">
     \t{{ attribute(record, displayColumn) }}
     </div>
 
@@ -149,11 +137,7 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
 \t\t\t</div>
 
 \t        <div class=\"col-xs-12 text-center\">
-\t           \t{% if post.image is empty %}
-                    <img src=\"/storage/app/media/filler_image.jpg\" alt=\"filler image\">
-                {% else %}
-                    <img src=\"{{ post.image.thumb(200, 200, {'mode':'crop'})  }}\">
-                {% endif %}
+\t            <img src=\"{{ post.image.thumb(200, 200, {'mode':'crop'})  }}\">
 \t        </div>
 
 \t    </div>
@@ -162,6 +146,6 @@ class __TwigTemplate_331cd23f35c21b2b941bcdb26c08aa59ad6bc15c66bf5bf718855f04b65
 
 {% else %}
     {{ notFoundMessage }}
-{% endif %}", "/var/www/public/themes/demo/pages/categories.htm", "");
+{% endif %}", "/var/www/public/themes/demo/pages/subcategories.htm", "");
     }
 }

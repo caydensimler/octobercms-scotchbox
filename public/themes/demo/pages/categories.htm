@@ -35,7 +35,11 @@ notFoundMessage = "Record not found"
 			</div>
 
 	        <div class="col-xs-12 text-center">
-	            <img src="{{ post.image.thumb(200, 200, {'mode':'crop'})  }}">
+	           	{% if post.image is empty %}
+                    <img src="/storage/app/media/filler_image.jpg" alt="filler image">
+                {% else %}
+                    <img src="{{ post.image.thumb(200, 200, {'mode':'crop'})  }}">
+                {% endif %}
 	        </div>
 
 	    </div>

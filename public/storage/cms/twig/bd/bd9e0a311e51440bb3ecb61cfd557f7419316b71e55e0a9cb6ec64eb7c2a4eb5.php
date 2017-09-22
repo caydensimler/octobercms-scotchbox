@@ -39,7 +39,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
             // line 12
-            echo "        <div class=\"col-xs-6 text-center postsBody\">
+            echo "        <div class=\"col-xs-4 text-center postsBody\">
             ";
             // line 14
             echo "            ";
@@ -57,7 +57,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
             echo "
                 <div class=\"col-xs-12 postTitle\">";
             // line 19
-            echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute($context["record"], "title", array())) > 25)) ? ((twig_slice($this->env, $this->getAttribute($context["record"], "title", array()), 0, 25) . "...")) : ($this->getAttribute($context["record"], "title", array()))), "html", null, true);
+            echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute($context["record"], "title", array())) > 20)) ? ((twig_slice($this->env, $this->getAttribute($context["record"], "title", array()), 0, 20) . "...")) : ($this->getAttribute($context["record"], "title", array()))), "html", null, true);
             echo "</div>
 
                 <div class=\"col-xs-12 postPrice\">\$";
@@ -208,14 +208,14 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
 
 <div class=\"col-xs-12\">
     {% for record in records %}
-        <div class=\"col-xs-6 text-center postsBody\">
+        <div class=\"col-xs-4 text-center postsBody\">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
                     <a href=\"{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}\">
                 {% endif %}
 
-                <div class=\"col-xs-12 postTitle\">{{ record.title|length > 25 ? record.title|slice(0, 25) ~ '...' : record.title }}</div>
+                <div class=\"col-xs-12 postTitle\">{{ record.title|length > 20 ? record.title|slice(0, 20) ~ '...' : record.title }}</div>
 
                 <div class=\"col-xs-12 postPrice\">\${{ record.price }}</div>
 

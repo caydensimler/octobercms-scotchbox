@@ -77,6 +77,12 @@
 
 /* Categories Page */
 
+  .categoriesHolderSidebar {
+    max-height: 94vh;
+    overflow-x: auto;
+    background-color: #CFD3D3;
+  }
+
   .categoriesBody {
     padding-top: 50px;
   }

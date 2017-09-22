@@ -1,4 +1,4 @@
-1506029799a:1:{s:8:"home.htm";a:11:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:2656:"title = "Homepage"
+1506096742a:1:{s:8:"home.htm";a:12:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:4977:"title = "Homepage"
 url = "/"
 layout = "default"
 is_hidden = 0
@@ -17,6 +17,16 @@ sortDirection = "asc"
 [subcategories]
 results = 0
 sortOrder = "name desc"
+
+[builderList builderList2]
+modelClass = "CaydenSimler\Craigslist\Models\Post"
+scope = "-"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "post-single"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
 ==
 {% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
@@ -26,11 +36,9 @@ sortOrder = "name desc"
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
 
-<div class="col-xs-12 invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta laudantium distinctio cupiditate inventore quos architecto assumenda tempore earum maxime ea quod odit eum eligendi aspernatur temporibus repellendus animi, ratione adipisci doloribus recusandae similique. Consectetur ex velit, accusamus labore veritatis cupiditate. Dolor rerum mollitia minus pariatur doloribus id, et libero expedita.</div>
-
-<div class="col-xs-12 text-center">
+<div class="col-xs-4 text-center categoriesHolderSidebar">
     {% for record in records %}
-        <div class="col-xs-6 categoriesList">
+        <div class="col-xs-12 categoriesList">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -65,7 +73,73 @@ sortOrder = "name desc"
             <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
         {% endif %}
     </ul>
-{% endif %}";s:5:"mtime";i:1506016086;s:6:"markup";s:2241:"{% set records = builderList.records %}
+{% endif %}
+
+
+<!-- Posts -->
+
+
+{% set records = builderList2.records %}
+{% set displayColumn = builderList2.displayColumn %}
+{% set noRecordsMessage = builderList2.noRecordsMessage %}
+{% set detailsPage = builderList2.detailsPage %}
+{% set detailsKeyColumn = builderList2.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList2.detailsUrlParameter %}
+
+
+<div class="col-xs-8">
+    {% for record in records %}
+        <div class="col-xs-6 text-center postsBody">
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            {% spaceless %}
+                {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+
+                <div class="col-xs-12 postTitle">{{ record.title|length > 20 ? record.title|slice(0, 20) ~ '...' : record.title }}</div>
+
+                <div class="col-xs-12 postPrice">${{ record.price }}</div>
+
+                <div class="col-xs-12 text-center">
+
+                    {% if record.image is empty %}
+                        <img src="/storage/app/media/filler_image.jpg" alt="filler image">
+                    {% else %}
+                        <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
+                    {% endif %}
+                </div>
+
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 50) | raw }}</div>
+
+                {% if detailsPage %}
+                    </a>
+                {% endif %}
+            {% endspaceless %}
+        
+            
+        </div>
+    {% else %}
+        <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}
+</div>
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}";s:5:"mtime";i:1506096140;s:6:"markup";s:4289:"{% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
 {% set noRecordsMessage = builderList.noRecordsMessage %}
 {% set detailsPage = builderList.detailsPage %}
@@ -73,11 +147,9 @@ sortOrder = "name desc"
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
 
-<div class="col-xs-12 invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta laudantium distinctio cupiditate inventore quos architecto assumenda tempore earum maxime ea quod odit eum eligendi aspernatur temporibus repellendus animi, ratione adipisci doloribus recusandae similique. Consectetur ex velit, accusamus labore veritatis cupiditate. Dolor rerum mollitia minus pariatur doloribus id, et libero expedita.</div>
-
-<div class="col-xs-12 text-center">
+<div class="col-xs-4 text-center categoriesHolderSidebar">
     {% for record in records %}
-        <div class="col-xs-6 categoriesList">
+        <div class="col-xs-12 categoriesList">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -112,4 +184,70 @@ sortOrder = "name desc"
             <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
         {% endif %}
     </ul>
-{% endif %}";s:4:"code";N;s:5:"title";s:8:"Homepage";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:39:"CaydenSimler\Craigslist\Models\Category";s:5:"scope";s:1:"-";s:13:"displayColumn";s:14:"category_title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";s:10:"sortColumn";s:14:"category_title";s:13:"sortDirection";s:3:"asc";}s:13:"subcategories";a:2:{s:7:"results";s:1:"0";s:9:"sortOrder";s:9:"name desc";}}}
+{% endif %}
+
+
+<!-- Posts -->
+
+
+{% set records = builderList2.records %}
+{% set displayColumn = builderList2.displayColumn %}
+{% set noRecordsMessage = builderList2.noRecordsMessage %}
+{% set detailsPage = builderList2.detailsPage %}
+{% set detailsKeyColumn = builderList2.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList2.detailsUrlParameter %}
+
+
+<div class="col-xs-8">
+    {% for record in records %}
+        <div class="col-xs-6 text-center postsBody">
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            {% spaceless %}
+                {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+
+                <div class="col-xs-12 postTitle">{{ record.title|length > 20 ? record.title|slice(0, 20) ~ '...' : record.title }}</div>
+
+                <div class="col-xs-12 postPrice">${{ record.price }}</div>
+
+                <div class="col-xs-12 text-center">
+
+                    {% if record.image is empty %}
+                        <img src="/storage/app/media/filler_image.jpg" alt="filler image">
+                    {% else %}
+                        <img src="{{ record.image.thumb(200, 200, {'mode':'crop'})  }}">
+                    {% endif %}
+                </div>
+
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 50) | raw }}</div>
+
+                {% if detailsPage %}
+                    </a>
+                {% endif %}
+            {% endspaceless %}
+        
+            
+        </div>
+    {% else %}
+        <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}
+</div>
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}";s:4:"code";N;s:5:"title";s:8:"Homepage";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:39:"CaydenSimler\Craigslist\Models\Category";s:5:"scope";s:1:"-";s:13:"displayColumn";s:14:"category_title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";s:10:"sortColumn";s:14:"category_title";s:13:"sortDirection";s:3:"asc";}s:13:"subcategories";a:2:{s:7:"results";s:1:"0";s:9:"sortOrder";s:9:"name desc";}s:24:"builderList builderList2";a:8:{s:10:"modelClass";s:35:"CaydenSimler\Craigslist\Models\Post";s:5:"scope";s:1:"-";s:13:"displayColumn";s:5:"title";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:11:"post-single";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:10:"pageNumber";s:11:"{{ :page }}";}}}
