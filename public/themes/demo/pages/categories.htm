@@ -23,25 +23,28 @@ notFoundMessage = "Record not found"
 
     {% for post in record.posts %}
 
-	    <div class="col-xs-6 text-center">
+	    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center postsBody">
+			<a href="/post/{{ post.slug }}">
+				<div class="col-xs-12 postTitle">
+					{{ post.title|length > 20 ? post.title|slice(0, 20) ~ '...' : post.title }}
+				</div>
 
-			<div class="col-xs-12 postTitle">
-				<a href="/post/{{ post.slug }}">
-				{{ post.title|length > 25 ? post.title|slice(0, 25) ~ '...' : post.title }}</a>
-			</div>
+				<div class="col-xs-12 postPrice">
+					${{ post.price }}
+				</div>
 
-			<div class="col-xs-12 postPrice">
-				${{ post.price }}
-			</div>
+		        <div class="col-xs-12 text-center">
+		           	{% if post.image is empty %}
+	                    <img src="/storage/app/media/filler_image.jpg" alt="filler image">
+	                {% else %}
+	                    <img src="{{ post.image.thumb(100, 100, {'mode':'crop'})  }}">
+	                {% endif %}
+		        </div>
 
-	        <div class="col-xs-12 text-center">
-	           	{% if post.image is empty %}
-                    <img src="/storage/app/media/filler_image.jpg" alt="filler image">
-                {% else %}
-                    <img src="{{ post.image.thumb(200, 200, {'mode':'crop'})  }}">
-                {% endif %}
-	        </div>
-
+		        <div class="col-xs-12 postsDetails">
+		        	{{ html_limit(post.body, 20) | raw }}
+		        </div>
+	   		</a>
 	    </div>
 
 	{% endfor %}

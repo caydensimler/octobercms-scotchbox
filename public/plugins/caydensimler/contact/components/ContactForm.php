@@ -24,12 +24,12 @@ class ContactForm extends ComponentBase {
 			[
 				'name' => Input::get('name'),
 				'email' => Input::get('email'),
-				'content' => Input::get('content')
+				'message' => Input::get('message')
 			],
 			[
 				'name' => 'required',
 				'email' => 'required|email|unique:users',
-				'content' => 'required'
+				'message' => 'required'
 			]
 		);
 
@@ -37,7 +37,7 @@ class ContactForm extends ComponentBase {
 		if($validator->fails()) {
 			return Redirect::back()->withErrors($validator);
 		} else {
-			$vars = ['name' => Input::get('name'), 'email' => Input::get('email'), 'content' => Input::get('content')];
+			$vars = ['name' => Input::get('name'), 'email' => Input::get('email'), 'message' => Input::get('message')];
 
 			Mail::send('caydensimler.contact::mail.message', $vars, function($message) {
 				$message->to('cayden@tiqiq.com', 'Admin Person');

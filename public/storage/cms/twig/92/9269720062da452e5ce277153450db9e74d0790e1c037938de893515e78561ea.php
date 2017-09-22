@@ -59,7 +59,7 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
                 echo "\">
 \t\t\t\t<img src=\"";
                 // line 19
-                echo twig_escape_filter($this->env, $this->getAttribute($context["image"], "thumb", array(0 => 200, 1 => 200, 2 => array("mode" => "crop")), "method"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($context["image"], "thumb", array(0 => 100, 1 => 100, 2 => array("mode" => "crop")), "method"), "html", null, true);
                 echo "\">
 \t\t\t</a>
 \t\t";
@@ -183,7 +183,7 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
 \t\t{% for image in record.image_gallery %}
 
 \t\t\t<a href=\"{{ image.path }}\">
-\t\t\t\t<img src=\"{{ image.thumb(200, 200, {'mode':'crop'})  }}\">
+\t\t\t\t<img src=\"{{ image.thumb(100, 100, {'mode':'crop'})  }}\">
 \t\t\t</a>
 \t\t{% endfor %}
 \t</div>

@@ -42,45 +42,61 @@ class __TwigTemplate_964c3a99d0b231f4904f581825101b24df5822fe9284776aeaa1751ff37
             foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
                 // line 12
                 echo "
-\t    <div class=\"col-xs-6 text-center\">
-
-\t\t\t<div class=\"col-xs-12 postTitle\">
-\t\t\t\t<a href=\"/post/";
-                // line 16
+\t\t<a href=\"/post/";
+                // line 13
                 echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "slug", array()), "html", null, true);
                 echo "\">
-\t\t\t\t";
-                // line 17
-                echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute($context["post"], "title", array())) > 25)) ? ((twig_slice($this->env, $this->getAttribute($context["post"], "title", array()), 0, 25) . "...")) : ($this->getAttribute($context["post"], "title", array()))), "html", null, true);
-                echo "</a>
-\t\t\t</div>
+\t    \t<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center postsBody\">
+\t\t\t\t<div class=\"col-xs-12 postTitle\">
+\t\t\t\t\t";
+                // line 16
+                echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute($context["post"], "title", array())) > 20)) ? ((twig_slice($this->env, $this->getAttribute($context["post"], "title", array()), 0, 20) . "...")) : ($this->getAttribute($context["post"], "title", array()))), "html", null, true);
+                echo "
+\t\t\t\t</div>
 
-\t\t\t<div class=\"col-xs-12 postPrice\">
-\t\t\t\t\$";
-                // line 21
+\t\t\t\t<div class=\"col-xs-12 postPrice\">
+\t\t\t\t\t\$";
+                // line 20
                 echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "price", array()), "html", null, true);
                 echo "
-\t\t\t</div>
+\t\t\t\t</div>
 
-\t        <div class=\"col-xs-12 text-center\">
-\t            <img src=\"";
-                // line 25
-                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["post"], "image", array()), "thumb", array(0 => 200, 1 => 200, 2 => array("mode" => "crop")), "method"), "html", null, true);
-                echo "\">
-\t        </div>
+\t\t        <div class=\"col-xs-12 text-center\">
+\t\t           \t";
+                // line 24
+                if (twig_test_empty($this->getAttribute($context["post"], "image", array()))) {
+                    // line 25
+                    echo "\t                    <img src=\"/storage/app/media/filler_image.jpg\" alt=\"filler image\">
+\t                ";
+                } else {
+                    // line 27
+                    echo "\t                    <img src=\"";
+                    echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["post"], "image", array()), "thumb", array(0 => 100, 1 => 100, 2 => array("mode" => "crop")), "method"), "html", null, true);
+                    echo "\">
+\t                ";
+                }
+                // line 29
+                echo "\t\t        </div>
 
-\t    </div>
+\t\t        <div class=\"col-xs-12 postsDetails\">
+\t\t        \t";
+                // line 32
+                echo call_user_func_array($this->env->getFunction('html_limit')->getCallable(), array("limit", $this->getAttribute($context["post"], "body", array()), 20));
+                echo "
+\t\t        </div>
+\t    \t</div>
+\t    </a>
 
 \t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 31
+            // line 38
             echo "
 ";
         } else {
-            // line 33
+            // line 40
             echo "    ";
             echo twig_escape_filter($this->env, ($context["notFoundMessage"] ?? null), "html", null, true);
             echo "
@@ -100,7 +116,7 @@ class __TwigTemplate_964c3a99d0b231f4904f581825101b24df5822fe9284776aeaa1751ff37
 
     public function getDebugInfo()
     {
-        return array (  84 => 33,  80 => 31,  68 => 25,  61 => 21,  54 => 17,  50 => 16,  44 => 12,  40 => 11,  34 => 8,  30 => 6,  28 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  100 => 40,  96 => 38,  84 => 32,  79 => 29,  73 => 27,  69 => 25,  67 => 24,  60 => 20,  53 => 16,  47 => 13,  44 => 12,  40 => 11,  34 => 8,  30 => 6,  28 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -125,22 +141,29 @@ class __TwigTemplate_964c3a99d0b231f4904f581825101b24df5822fe9284776aeaa1751ff37
 
     {% for post in record.posts %}
 
-\t    <div class=\"col-xs-6 text-center\">
+\t\t<a href=\"/post/{{ post.slug }}\">
+\t    \t<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center postsBody\">
+\t\t\t\t<div class=\"col-xs-12 postTitle\">
+\t\t\t\t\t{{ post.title|length > 20 ? post.title|slice(0, 20) ~ '...' : post.title }}
+\t\t\t\t</div>
 
-\t\t\t<div class=\"col-xs-12 postTitle\">
-\t\t\t\t<a href=\"/post/{{ post.slug }}\">
-\t\t\t\t{{ post.title|length > 25 ? post.title|slice(0, 25) ~ '...' : post.title }}</a>
-\t\t\t</div>
+\t\t\t\t<div class=\"col-xs-12 postPrice\">
+\t\t\t\t\t\${{ post.price }}
+\t\t\t\t</div>
 
-\t\t\t<div class=\"col-xs-12 postPrice\">
-\t\t\t\t\${{ post.price }}
-\t\t\t</div>
+\t\t        <div class=\"col-xs-12 text-center\">
+\t\t           \t{% if post.image is empty %}
+\t                    <img src=\"/storage/app/media/filler_image.jpg\" alt=\"filler image\">
+\t                {% else %}
+\t                    <img src=\"{{ post.image.thumb(100, 100, {'mode':'crop'})  }}\">
+\t                {% endif %}
+\t\t        </div>
 
-\t        <div class=\"col-xs-12 text-center\">
-\t            <img src=\"{{ post.image.thumb(200, 200, {'mode':'crop'})  }}\">
-\t        </div>
-
-\t    </div>
+\t\t        <div class=\"col-xs-12 postsDetails\">
+\t\t        \t{{ html_limit(post.body, 20) | raw }}
+\t\t        </div>
+\t    \t</div>
+\t    </a>
 
 \t{% endfor %}
 

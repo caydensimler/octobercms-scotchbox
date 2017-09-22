@@ -12,7 +12,7 @@
 
 	<div class="contactContainer">
 		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Message</label>
-		<textarea name="content" class="col-xs-offset-2 col-xs-8" rows="5"></textarea>
+		<textarea name="message" class="col-xs-offset-2 col-xs-8" rows="5" placeholder="{{ errors.first('message') }}"></textarea>
 	</div>
 
 	<div class="col-xs-12 text-center contactContainer">

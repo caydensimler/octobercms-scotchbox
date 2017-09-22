@@ -20,6 +20,12 @@
      color: red;
   }
 
+/* Pagination */
+
+  .pagination {
+    background-color: #CFD3D3;
+  }
+
 /* Posts Page */
 
   .postsBody {
@@ -51,7 +57,7 @@
 /* Single-Post Page */
 
   .postTitle {
-    font-size: 30px;
+    font-size: 20px;
     color: black;
     border-bottom: 1px solid black;
   }

@@ -39,7 +39,7 @@ sortDirection = "desc"
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
 
-<div class="col-xs-4 text-center categoriesHolderSidebar">
+<div class="col-xs-4 categoriesHolderSidebar">
     {% for record in records %}
         <div class="col-xs-12 categoriesList">
             {# Use spaceless tag to remove spaces inside the A tag. #}
@@ -88,7 +88,9 @@ sortDirection = "desc"
 {% set detailsKeyColumn = builderList2.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList2.detailsUrlParameter %}
 
+
 <div class="col-xs-8 postsHolderMain">
+    <div class="col-xs-12 text-center"><h3>Most Recent Posts</h3></div>
     {% for record in records %}
         <div class="col-xs-12 col-md-6 col-lg-4 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
@@ -110,7 +112,7 @@ sortDirection = "desc"
                     {% endif %}
                 </div>
 
-                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 45) | raw }}</div>
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 20) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>

@@ -36,7 +36,10 @@ class __TwigTemplate_7f2a8735a3532a515284638ad75498627744af8eb084e7aa02ab6e68a97
 
 \t<div class=\"contactContainer\">
 \t\t<label class=\"contactFormHeader col-xs-offset-2 col-xs-8\">Message</label>
-\t\t<textarea name=\"content\" class=\"col-xs-offset-2 col-xs-8\" rows=\"5\"></textarea>
+\t\t<textarea name=\"message\" class=\"col-xs-offset-2 col-xs-8\" rows=\"5\" placeholder=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["errors"] ?? null), "first", array(0 => "message"), "method"), "html", null, true);
+        echo "\"></textarea>
 \t</div>
 
 \t<div class=\"col-xs-12 text-center contactContainer\">
@@ -77,7 +80,7 @@ class __TwigTemplate_7f2a8735a3532a515284638ad75498627744af8eb084e7aa02ab6e68a97
 
     public function getDebugInfo()
     {
-        return array (  62 => 26,  53 => 24,  49 => 23,  33 => 10,  25 => 5,  19 => 1,);
+        return array (  65 => 26,  56 => 24,  52 => 23,  41 => 15,  33 => 10,  25 => 5,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -104,7 +107,7 @@ class __TwigTemplate_7f2a8735a3532a515284638ad75498627744af8eb084e7aa02ab6e68a97
 
 \t<div class=\"contactContainer\">
 \t\t<label class=\"contactFormHeader col-xs-offset-2 col-xs-8\">Message</label>
-\t\t<textarea name=\"content\" class=\"col-xs-offset-2 col-xs-8\" rows=\"5\"></textarea>
+\t\t<textarea name=\"message\" class=\"col-xs-offset-2 col-xs-8\" rows=\"5\" placeholder=\"{{ errors.first('message') }}\"></textarea>
 \t</div>
 
 \t<div class=\"col-xs-12 text-center contactContainer\">

@@ -1,4 +1,4 @@
-1506099236a:1:{s:8:"home.htm";a:12:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:4302:"title = "Homepage"
+1506110824a:1:{s:8:"home.htm";a:12:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:4398:"title = "Homepage"
 url = "/"
 layout = "default"
 is_hidden = 0
@@ -39,7 +39,7 @@ sortDirection = "desc"
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
 
-<div class="col-xs-4 text-center categoriesHolderSidebar">
+<div class="col-xs-4 categoriesHolderSidebar">
     {% for record in records %}
         <div class="col-xs-12 categoriesList">
             {# Use spaceless tag to remove spaces inside the A tag. #}
@@ -88,7 +88,9 @@ sortDirection = "desc"
 {% set detailsKeyColumn = builderList2.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList2.detailsUrlParameter %}
 
+
 <div class="col-xs-8 postsHolderMain">
+    <div class="col-xs-12 text-center"><h3>Most Recent Posts</h3></div>
     {% for record in records %}
         <div class="col-xs-12 col-md-6 col-lg-4 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
@@ -110,7 +112,7 @@ sortDirection = "desc"
                     {% endif %}
                 </div>
 
-                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 45) | raw }}</div>
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 20) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>
@@ -122,7 +124,7 @@ sortDirection = "desc"
     {% else %}
         <li class="no-data">{{ noRecordsMessage }}</li>
     {% endfor %}
-</div>";s:5:"mtime";i:1506098634;s:6:"markup";s:3576:"{% set records = builderList.records %}
+</div>";s:5:"mtime";i:1506110222;s:6:"markup";s:3639:"{% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
 {% set noRecordsMessage = builderList.noRecordsMessage %}
 {% set detailsPage = builderList.detailsPage %}
@@ -130,7 +132,7 @@ sortDirection = "desc"
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
 
-<div class="col-xs-4 text-center categoriesHolderSidebar">
+<div class="col-xs-4 categoriesHolderSidebar">
     {% for record in records %}
         <div class="col-xs-12 categoriesList">
             {# Use spaceless tag to remove spaces inside the A tag. #}
@@ -179,7 +181,9 @@ sortDirection = "desc"
 {% set detailsKeyColumn = builderList2.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList2.detailsUrlParameter %}
 
+
 <div class="col-xs-8 postsHolderMain">
+    <div class="col-xs-12 text-center"><h3>Most Recent Posts</h3></div>
     {% for record in records %}
         <div class="col-xs-12 col-md-6 col-lg-4 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
@@ -201,7 +205,7 @@ sortDirection = "desc"
                     {% endif %}
                 </div>
 
-                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 45) | raw }}</div>
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 20) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>

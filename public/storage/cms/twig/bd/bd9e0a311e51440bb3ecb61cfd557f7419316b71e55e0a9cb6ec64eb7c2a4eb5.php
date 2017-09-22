@@ -29,76 +29,74 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
         $context["detailsUrlParameter"] = $this->getAttribute(($context["builderList"] ?? null), "detailsUrlParameter", array());
         // line 7
         echo "
-<div class=\"col-xs-12 invisible\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In error fuga sequi, incidunt laboriosam, minus ipsa ut eos facere illum, molestiae autem eius maxime iste delectus quis, odit pariatur praesentium.</div>
-
 <div class=\"col-xs-12\">
     ";
-        // line 11
+        // line 9
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["records"] ?? null));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
-            // line 12
-            echo "        <div class=\"col-xs-4 text-center postsBody\">
+            // line 10
+            echo "        <div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center postsBody\">
             ";
-            // line 14
+            // line 12
             echo "            ";
             ob_start();
-            // line 15
+            // line 13
             echo "                ";
             if (($context["detailsPage"] ?? null)) {
-                // line 16
+                // line 14
                 echo "                    <a href=\"";
                 echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter(($context["detailsPage"] ?? null), array(($context["detailsUrlParameter"] ?? null) => $this->getAttribute($context["record"], ($context["detailsKeyColumn"] ?? null))));
                 echo "\">
                 ";
             }
-            // line 18
+            // line 16
             echo "
                 <div class=\"col-xs-12 postTitle\">";
-            // line 19
+            // line 17
             echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute($context["record"], "title", array())) > 20)) ? ((twig_slice($this->env, $this->getAttribute($context["record"], "title", array()), 0, 20) . "...")) : ($this->getAttribute($context["record"], "title", array()))), "html", null, true);
             echo "</div>
 
                 <div class=\"col-xs-12 postPrice\">\$";
-            // line 21
+            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute($context["record"], "price", array()), "html", null, true);
             echo "</div>
 
-                <div class=\"col-xs-12 text-center\">
+                <div class=\"col-xs-12 text-center hidden-xs\">
 
                     ";
-            // line 25
+            // line 23
             if (twig_test_empty($this->getAttribute($context["record"], "image", array()))) {
-                // line 26
+                // line 24
                 echo "                        <img src=\"/storage/app/media/filler_image.jpg\" alt=\"filler image\">
                     ";
             } else {
-                // line 28
+                // line 26
                 echo "                        <img src=\"";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["record"], "image", array()), "thumb", array(0 => 100, 1 => 100, 2 => array("mode" => "crop")), "method"), "html", null, true);
                 echo "\">
                     ";
             }
-            // line 30
+            // line 28
             echo "                </div>
 
                 <div class=\"col-xs-12 postsDetails\">";
-            // line 32
-            echo call_user_func_array($this->env->getFunction('html_limit')->getCallable(), array("limit", $this->getAttribute($context["record"], "body", array()), 50));
+            // line 30
+            echo call_user_func_array($this->env->getFunction('html_limit')->getCallable(), array("limit", $this->getAttribute($context["record"], "body", array()), 20));
             echo "</div>
 
                 ";
-            // line 34
+            // line 32
             if (($context["detailsPage"] ?? null)) {
-                // line 35
+                // line 33
                 echo "                    </a>
                 ";
             }
-            // line 37
+            // line 35
             echo "            ";
             echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
-            // line 38
+            // line 36
             echo "        
             
         </div>
@@ -106,7 +104,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 42
+            // line 40
             echo "        <li class=\"no-data\">";
             echo twig_escape_filter($this->env, ($context["noRecordsMessage"] ?? null), "html", null, true);
             echo "</li>
@@ -115,61 +113,65 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 42
         echo "</div>
 
-";
+
+<div class=\"col-xs-12 text-center\">
+    ";
         // line 46
         if (($this->getAttribute(($context["records"] ?? null), "lastPage", array()) > 1)) {
             // line 47
-            echo "    <ul class=\"pagination\">
-        ";
+            echo "        <ul class=\"pagination\">
+            ";
             // line 48
             if (($this->getAttribute(($context["records"] ?? null), "currentPage", array()) > 1)) {
                 // line 49
-                echo "            <li><a href=\"";
+                echo "                <li><a href=\"";
                 echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter($this->getAttribute($this->getAttribute(($context["this"] ?? null), "page", array()), "baseFileName", array()), array(($context["pageParam"] ?? null) => ($this->getAttribute(($context["records"] ?? null), "currentPage", array()) - 1)));
                 echo "\">&larr; Prev</a></li>
-        ";
+            ";
             }
             // line 51
             echo "
-        ";
+            ";
             // line 52
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(range(1, $this->getAttribute(($context["records"] ?? null), "lastPage", array())));
             foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
                 // line 53
-                echo "            <li class=\"";
+                echo "                <li class=\"";
                 echo ((($this->getAttribute(($context["records"] ?? null), "currentPage", array()) == $context["page"])) ? ("active") : (null));
                 echo "\">
-                <a href=\"";
+                    <a href=\"";
                 // line 54
                 echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter($this->getAttribute($this->getAttribute(($context["this"] ?? null), "page", array()), "baseFileName", array()), array(($context["pageParam"] ?? null) => $context["page"]));
                 echo "\">";
                 echo twig_escape_filter($this->env, $context["page"], "html", null, true);
                 echo "</a>
-            </li>
-        ";
+                </li>
+            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 57
             echo "
-        ";
+            ";
             // line 58
             if (($this->getAttribute(($context["records"] ?? null), "lastPage", array()) > $this->getAttribute(($context["records"] ?? null), "currentPage", array()))) {
                 // line 59
-                echo "            <li><a href=\"";
+                echo "                <li><a href=\"";
                 echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter($this->getAttribute($this->getAttribute(($context["this"] ?? null), "page", array()), "baseFileName", array()), array(($context["pageParam"] ?? null) => ($this->getAttribute(($context["records"] ?? null), "currentPage", array()) + 1)));
                 echo "\">Next &rarr;</a></li>
-        ";
+            ";
             }
             // line 61
-            echo "    </ul>
-";
+            echo "        </ul>
+    ";
         }
+        // line 63
+        echo "</div>";
     }
 
     public function getTemplateName()
@@ -184,7 +186,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
 
     public function getDebugInfo()
     {
-        return array (  170 => 61,  164 => 59,  162 => 58,  159 => 57,  148 => 54,  143 => 53,  139 => 52,  136 => 51,  130 => 49,  128 => 48,  125 => 47,  123 => 46,  119 => 44,  110 => 42,  102 => 38,  99 => 37,  95 => 35,  93 => 34,  88 => 32,  84 => 30,  78 => 28,  74 => 26,  72 => 25,  65 => 21,  60 => 19,  57 => 18,  51 => 16,  48 => 15,  45 => 14,  42 => 12,  37 => 11,  31 => 7,  29 => 6,  27 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  174 => 63,  170 => 61,  164 => 59,  162 => 58,  159 => 57,  148 => 54,  143 => 53,  139 => 52,  136 => 51,  130 => 49,  128 => 48,  125 => 47,  123 => 46,  117 => 42,  108 => 40,  100 => 36,  97 => 35,  93 => 33,  91 => 32,  86 => 30,  82 => 28,  76 => 26,  72 => 24,  70 => 23,  63 => 19,  58 => 17,  55 => 16,  49 => 14,  46 => 13,  43 => 12,  40 => 10,  35 => 9,  31 => 7,  29 => 6,  27 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -204,11 +206,9 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
-<div class=\"col-xs-12 invisible\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In error fuga sequi, incidunt laboriosam, minus ipsa ut eos facere illum, molestiae autem eius maxime iste delectus quis, odit pariatur praesentium.</div>
-
 <div class=\"col-xs-12\">
     {% for record in records %}
-        <div class=\"col-xs-4 text-center postsBody\">
+        <div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center postsBody\">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -219,7 +219,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
 
                 <div class=\"col-xs-12 postPrice\">\${{ record.price }}</div>
 
-                <div class=\"col-xs-12 text-center\">
+                <div class=\"col-xs-12 text-center hidden-xs\">
 
                     {% if record.image is empty %}
                         <img src=\"/storage/app/media/filler_image.jpg\" alt=\"filler image\">
@@ -228,7 +228,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
                     {% endif %}
                 </div>
 
-                <div class=\"col-xs-12 postsDetails\">{{ html_limit(record.body, 50) | raw }}</div>
+                <div class=\"col-xs-12 postsDetails\">{{ html_limit(record.body, 20) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>
@@ -242,22 +242,25 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
     {% endfor %}
 </div>
 
-{% if records.lastPage > 1 %}
-    <ul class=\"pagination\">
-        {% if records.currentPage > 1 %}
-            <li><a href=\"{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}\">&larr; Prev</a></li>
-        {% endif %}
 
-        {% for page in 1..records.lastPage %}
-            <li class=\"{{ records.currentPage == page ? 'active' : null }}\">
-                <a href=\"{{ this.page.baseFileName|page({ (pageParam): page }) }}\">{{ page }}</a>
-            </li>
-        {% endfor %}
+<div class=\"col-xs-12 text-center\">
+    {% if records.lastPage > 1 %}
+        <ul class=\"pagination\">
+            {% if records.currentPage > 1 %}
+                <li><a href=\"{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}\">&larr; Prev</a></li>
+            {% endif %}
 
-        {% if records.lastPage > records.currentPage %}
-            <li><a href=\"{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}\">Next &rarr;</a></li>
-        {% endif %}
-    </ul>
-{% endif %}", "/var/www/public/themes/demo/pages/posts.htm", "");
+            {% for page in 1..records.lastPage %}
+                <li class=\"{{ records.currentPage == page ? 'active' : null }}\">
+                    <a href=\"{{ this.page.baseFileName|page({ (pageParam): page }) }}\">{{ page }}</a>
+                </li>
+            {% endfor %}
+
+            {% if records.lastPage > records.currentPage %}
+                <li><a href=\"{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}\">Next &rarr;</a></li>
+            {% endif %}
+        </ul>
+    {% endif %}
+</div>", "/var/www/public/themes/demo/pages/posts.htm", "");
     }
 }

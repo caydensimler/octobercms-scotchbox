@@ -23,33 +23,37 @@ class __TwigTemplate_4fa679f3871d5321a9b229ff2f4749a660f9a8b50c300ce04127fdbc0fc
 
        \t<div class=\"col-xs-12 invisible\"><h6>invisible text</h3></div>
 
+
+        <div class=\"col-xs-12 text-center\">
+            <h3>Login or signup with Facebook or Google.</h3>
+        </div>
         <div class=\"col-xs-12 text-center\">
         \t";
-            // line 8
+            // line 12
             $context['__cms_component_params'] = [];
             echo $this->env->getExtension('CMS')->componentFunction("socialiteLoginbuttons"            , $context['__cms_component_params']            );
             unset($context['__cms_component_params']);
-            // line 9
+            // line 13
             echo "        </div>
         
         <div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">
             <h3 class=\"text-center\">Sign in to an existing account</h3>
             ";
-            // line 13
+            // line 17
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('CMS')->partialFunction((($context["account"] ?? null) . "::signin")            , $context['__cms_partial_params']            );
             unset($context['__cms_partial_params']);
-            // line 14
+            // line 18
             echo "        </div>
 
         <div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">
             <h3 class=\"text-center\">Register a new account</h3>
             ";
-            // line 18
+            // line 22
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('CMS')->partialFunction((($context["account"] ?? null) . "::register")            , $context['__cms_partial_params']            );
             unset($context['__cms_partial_params']);
-            // line 19
+            // line 23
             echo "        </div>
 
     </div>
@@ -57,18 +61,18 @@ class __TwigTemplate_4fa679f3871d5321a9b229ff2f4749a660f9a8b50c300ce04127fdbc0fc
 
 ";
         } else {
-            // line 25
+            // line 29
             echo "
     ";
-            // line 26
+            // line 30
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('CMS')->partialFunction((($context["account"] ?? null) . "::activation_check")            , $context['__cms_partial_params']            );
             unset($context['__cms_partial_params']);
-            // line 27
+            // line 31
             echo "
     <h2 class=\"text-center\">
     \tWelcome to your account page, ";
-            // line 29
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute(($context["user"] ?? null), "name", array()), "html", null, true);
             echo ".
     </h2>
@@ -80,20 +84,20 @@ class __TwigTemplate_4fa679f3871d5321a9b229ff2f4749a660f9a8b50c300ce04127fdbc0fc
 
     <div class=\"col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6\">
     \t";
-            // line 38
+            // line 42
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('CMS')->partialFunction((($context["account"] ?? null) . "::update")            , $context['__cms_partial_params']            );
             unset($context['__cms_partial_params']);
-            // line 39
+            // line 43
             echo "    </div>
 \t
 \t<div class=\"col-xs-12 text-center\">
     \t";
-            // line 42
+            // line 46
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('CMS')->partialFunction((($context["account"] ?? null) . "::deactivate_link")            , $context['__cms_partial_params']            );
             unset($context['__cms_partial_params']);
-            // line 43
+            // line 47
             echo "\t</div>
 
 ";
@@ -112,7 +116,7 @@ class __TwigTemplate_4fa679f3871d5321a9b229ff2f4749a660f9a8b50c300ce04127fdbc0fc
 
     public function getDebugInfo()
     {
-        return array (  97 => 43,  93 => 42,  88 => 39,  84 => 38,  72 => 29,  68 => 27,  64 => 26,  61 => 25,  53 => 19,  49 => 18,  43 => 14,  39 => 13,  33 => 9,  29 => 8,  21 => 2,  19 => 1,);
+        return array (  101 => 47,  97 => 46,  92 => 43,  88 => 42,  76 => 33,  72 => 31,  68 => 30,  65 => 29,  57 => 23,  53 => 22,  47 => 18,  43 => 17,  37 => 13,  33 => 12,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -131,6 +135,10 @@ class __TwigTemplate_4fa679f3871d5321a9b229ff2f4749a660f9a8b50c300ce04127fdbc0fc
 
        \t<div class=\"col-xs-12 invisible\"><h6>invisible text</h3></div>
 
+
+        <div class=\"col-xs-12 text-center\">
+            <h3>Login or signup with Facebook or Google.</h3>
+        </div>
         <div class=\"col-xs-12 text-center\">
         \t{% component 'socialiteLoginbuttons' %}
         </div>

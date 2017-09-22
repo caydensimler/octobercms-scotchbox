@@ -30,7 +30,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
         // line 7
         echo "
 
-<div class=\"col-xs-4 text-center categoriesHolderSidebar\">
+<div class=\"col-xs-4 categoriesHolderSidebar\">
     ";
         // line 10
         $context['_parent'] = $context;
@@ -161,74 +161,76 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
         $context["detailsUrlParameter"] = $this->getAttribute(($context["builderList2"] ?? null), "detailsUrlParameter", array());
         // line 57
         echo "
+
 <div class=\"col-xs-8 postsHolderMain\">
+    <div class=\"col-xs-12 text-center\"><h3>Most Recent Posts</h3></div>
     ";
-        // line 59
+        // line 61
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["records"] ?? null));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
-            // line 60
+            // line 62
             echo "        <div class=\"col-xs-12 col-md-6 col-lg-4 text-center postsBody\">
             ";
-            // line 62
+            // line 64
             echo "            ";
             ob_start();
-            // line 63
+            // line 65
             echo "                ";
             if (($context["detailsPage"] ?? null)) {
-                // line 64
+                // line 66
                 echo "                    <a href=\"";
                 echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter(($context["detailsPage"] ?? null), array(($context["detailsUrlParameter"] ?? null) => $this->getAttribute($context["record"], ($context["detailsKeyColumn"] ?? null))));
                 echo "\">
                 ";
             }
-            // line 66
+            // line 68
             echo "
                 <div class=\"col-xs-12 postTitle\">";
-            // line 67
+            // line 69
             echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute($context["record"], "title", array())) > 15)) ? ((twig_slice($this->env, $this->getAttribute($context["record"], "title", array()), 0, 15) . "...")) : ($this->getAttribute($context["record"], "title", array()))), "html", null, true);
             echo "</div>
 
                 <div class=\"col-xs-12 postPrice\">\$";
-            // line 69
+            // line 71
             echo twig_escape_filter($this->env, $this->getAttribute($context["record"], "price", array()), "html", null, true);
             echo "</div>
 
                 <div class=\"col-xs-12 text-center\">
 
                     ";
-            // line 73
+            // line 75
             if (twig_test_empty($this->getAttribute($context["record"], "image", array()))) {
-                // line 74
+                // line 76
                 echo "                        <img src=\"/storage/app/media/filler_image.jpg\" alt=\"filler image\">
                     ";
             } else {
-                // line 76
+                // line 78
                 echo "                        <img src=\"";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["record"], "image", array()), "thumb", array(0 => 100, 1 => 100, 2 => array("mode" => "crop")), "method"), "html", null, true);
                 echo "\">
                     ";
             }
-            // line 78
+            // line 80
             echo "                </div>
 
                 <div class=\"col-xs-12 postsDetails\">";
-            // line 80
-            echo call_user_func_array($this->env->getFunction('html_limit')->getCallable(), array("limit", $this->getAttribute($context["record"], "body", array()), 45));
+            // line 82
+            echo call_user_func_array($this->env->getFunction('html_limit')->getCallable(), array("limit", $this->getAttribute($context["record"], "body", array()), 20));
             echo "</div>
 
                 ";
-            // line 82
+            // line 84
             if (($context["detailsPage"] ?? null)) {
-                // line 83
+                // line 85
                 echo "                    </a>
                 ";
             }
-            // line 85
+            // line 87
             echo "            ";
             echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
-            // line 86
+            // line 88
             echo "        
             
         </div>
@@ -236,7 +238,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 90
+            // line 92
             echo "        <li class=\"no-data\">";
             echo twig_escape_filter($this->env, ($context["noRecordsMessage"] ?? null), "html", null, true);
             echo "</li>
@@ -245,7 +247,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 92
+        // line 94
         echo "</div>";
     }
 
@@ -261,7 +263,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
 
     public function getDebugInfo()
     {
-        return array (  249 => 92,  240 => 90,  232 => 86,  229 => 85,  225 => 83,  223 => 82,  218 => 80,  214 => 78,  208 => 76,  204 => 74,  202 => 73,  195 => 69,  190 => 67,  187 => 66,  181 => 64,  178 => 63,  175 => 62,  172 => 60,  167 => 59,  163 => 57,  161 => 56,  159 => 55,  157 => 54,  155 => 53,  153 => 52,  151 => 51,  145 => 47,  141 => 45,  135 => 43,  133 => 42,  130 => 41,  119 => 38,  114 => 37,  110 => 36,  107 => 35,  101 => 33,  99 => 32,  96 => 31,  94 => 30,  90 => 28,  81 => 26,  75 => 24,  72 => 23,  68 => 21,  66 => 20,  59 => 18,  56 => 17,  50 => 15,  47 => 14,  44 => 13,  41 => 11,  36 => 10,  31 => 7,  29 => 6,  27 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  251 => 94,  242 => 92,  234 => 88,  231 => 87,  227 => 85,  225 => 84,  220 => 82,  216 => 80,  210 => 78,  206 => 76,  204 => 75,  197 => 71,  192 => 69,  189 => 68,  183 => 66,  180 => 65,  177 => 64,  174 => 62,  169 => 61,  163 => 57,  161 => 56,  159 => 55,  157 => 54,  155 => 53,  153 => 52,  151 => 51,  145 => 47,  141 => 45,  135 => 43,  133 => 42,  130 => 41,  119 => 38,  114 => 37,  110 => 36,  107 => 35,  101 => 33,  99 => 32,  96 => 31,  94 => 30,  90 => 28,  81 => 26,  75 => 24,  72 => 23,  68 => 21,  66 => 20,  59 => 18,  56 => 17,  50 => 15,  47 => 14,  44 => 13,  41 => 11,  36 => 10,  31 => 7,  29 => 6,  27 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -282,7 +284,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
 
-<div class=\"col-xs-4 text-center categoriesHolderSidebar\">
+<div class=\"col-xs-4 categoriesHolderSidebar\">
     {% for record in records %}
         <div class=\"col-xs-12 categoriesList\">
             {# Use spaceless tag to remove spaces inside the A tag. #}
@@ -331,7 +333,9 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
 {% set detailsKeyColumn = builderList2.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList2.detailsUrlParameter %}
 
+
 <div class=\"col-xs-8 postsHolderMain\">
+    <div class=\"col-xs-12 text-center\"><h3>Most Recent Posts</h3></div>
     {% for record in records %}
         <div class=\"col-xs-12 col-md-6 col-lg-4 text-center postsBody\">
             {# Use spaceless tag to remove spaces inside the A tag. #}
@@ -353,7 +357,7 @@ class __TwigTemplate_e6040ea2e9f3db2ce44d80b0217de2967a5a67c6210701ba638ba24112c
                     {% endif %}
                 </div>
 
-                <div class=\"col-xs-12 postsDetails\">{{ html_limit(record.body, 45) | raw }}</div>
+                <div class=\"col-xs-12 postsDetails\">{{ html_limit(record.body, 20) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>

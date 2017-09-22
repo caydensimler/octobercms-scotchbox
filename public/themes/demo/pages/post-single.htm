@@ -28,7 +28,7 @@ notFoundMessage = "Record not found"
 		{% for image in record.image_gallery %}
 
 			<a href="{{ image.path }}">
-				<img src="{{ image.thumb(200, 200, {'mode':'crop'})  }}">
+				<img src="{{ image.thumb(100, 100, {'mode':'crop'})  }}">
 			</a>
 		{% endfor %}
 	</div>

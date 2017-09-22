@@ -11,7 +11,7 @@ noRecordsMessage = "No records found"
 detailsPage = "post-single"
 detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
-recordsPerPage = 10
+recordsPerPage = 12
 pageNumber = "{{ :page }}"
 ==
 {% set records = builderList.records %}
@@ -21,11 +21,9 @@ pageNumber = "{{ :page }}"
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
-<div class="col-xs-12 invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In error fuga sequi, incidunt laboriosam, minus ipsa ut eos facere illum, molestiae autem eius maxime iste delectus quis, odit pariatur praesentium.</div>
-
 <div class="col-xs-12">
     {% for record in records %}
-        <div class="col-xs-4 text-center postsBody">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
             {% spaceless %}
                 {% if detailsPage %}
@@ -36,7 +34,7 @@ pageNumber = "{{ :page }}"
 
                 <div class="col-xs-12 postPrice">${{ record.price }}</div>
 
-                <div class="col-xs-12 text-center">
+                <div class="col-xs-12 text-center hidden-xs">
 
                     {% if record.image is empty %}
                         <img src="/storage/app/media/filler_image.jpg" alt="filler image">
@@ -45,7 +43,7 @@ pageNumber = "{{ :page }}"
                     {% endif %}
                 </div>
 
-                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 50) | raw }}</div>
+                <div class="col-xs-12 postsDetails">{{ html_limit(record.body, 20) | raw }}</div>
 
                 {% if detailsPage %}
                     </a>
@@ -59,20 +57,23 @@ pageNumber = "{{ :page }}"
     {% endfor %}
 </div>
 
-{% if records.lastPage > 1 %}
-    <ul class="pagination">
-        {% if records.currentPage > 1 %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
-        {% endif %}
 
-        {% for page in 1..records.lastPage %}
-            <li class="{{ records.currentPage == page ? 'active' : null }}">
-                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-            </li>
-        {% endfor %}
+<div class="col-xs-12 text-center">
+    {% if records.lastPage > 1 %}
+        <ul class="pagination">
+            {% if records.currentPage > 1 %}
+                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+            {% endif %}
 
-        {% if records.lastPage > records.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
-        {% endif %}
-    </ul>
-{% endif %}
+            {% for page in 1..records.lastPage %}
+                <li class="{{ records.currentPage == page ? 'active' : null }}">
+                    <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                </li>
+            {% endfor %}
+
+            {% if records.lastPage > records.currentPage %}
+                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+            {% endif %}
+        </ul>
+    {% endif %}
+</div>
