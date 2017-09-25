@@ -133,9 +133,7 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
 ";
         } else {
             // line 53
-            echo "    ";
-            echo twig_escape_filter($this->env, ($context["notFoundMessage"] ?? null), "html", null, true);
-            echo "
+            echo "    <div class=\"col-xs-12 text-center\"><h1>Post not found.</h1></div>
 ";
         }
     }
@@ -217,7 +215,7 @@ class __TwigTemplate_ba15a16066728cd732296ef909c936013269ae7b9e8403382cbe969370c
 \t</div>
 
 {% else %}
-    {{ notFoundMessage }}
+    <div class=\"col-xs-12 text-center\"><h1>Post not found.</h1></div>
 {% endif %}", "/var/www/public/themes/demo/pages/post-single.htm", "");
     }
 }

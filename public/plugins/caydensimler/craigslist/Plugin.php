@@ -7,7 +7,8 @@ class Plugin extends PluginBase
     public function registerComponents() {
 
         return [
-            'CaydenSimler\Craigslist\Components\Subcategories' => 'subcategories'
+            'CaydenSimler\Craigslist\Components\Subcategories' => 'subcategories',
+            'CaydenSimler\Craigslist\Components\PostForm' => 'postform'
         ];
     }
 

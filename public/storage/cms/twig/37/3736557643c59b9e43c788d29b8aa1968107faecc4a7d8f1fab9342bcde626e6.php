@@ -161,7 +161,7 @@ class __TwigTemplate_4fa679f3871d5321a9b229ff2f4749a660f9a8b50c300ce04127fdbc0fc
     {% partial account ~ '::activation_check' %}
 
     <h2 class=\"text-center\">
-    \tWelcome to your account page, {{ user.name}}.
+    \tWelcome to your account page, {{ user.name }}.
     </h2>
 
 \t<hr>

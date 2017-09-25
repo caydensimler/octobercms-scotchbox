@@ -30,6 +30,17 @@ recordsPerPage = 6
 pageNumber = "{{ :page }}"
 sortColumn = "created_at"
 sortDirection = "desc"
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+
+[searchResults]
+resultsPerPage = 10
+showProviderBadge = 1
+noResultsMessage = "Your search returned no results."
+visitPageMessage = "Visit page"
 ==
 {% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}

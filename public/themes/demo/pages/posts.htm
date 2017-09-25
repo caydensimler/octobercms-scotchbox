@@ -13,6 +13,10 @@ detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
 recordsPerPage = 12
 pageNumber = "{{ :page }}"
+sortColumn = "created_at"
+sortDirection = "desc"
+
+[siteSearchInclude]
 ==
 {% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
@@ -20,6 +24,8 @@ pageNumber = "{{ :page }}"
 {% set detailsPage = builderList.detailsPage %}
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+{% component 'siteSearchInclude' %}
 
 <div class="col-xs-12">
     {% for record in records %}

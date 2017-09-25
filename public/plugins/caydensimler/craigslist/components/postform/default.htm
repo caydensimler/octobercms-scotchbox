@@ -1,0 +1,38 @@
+<?php var_dump($originalValues); ?>
+
+<form data-request="onSave">
+
+	<div class="contactContainer">
+		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Title</label>
+		<input type="text" name="title" class="col-xs-offset-2 col-xs-8" placeholder="{{ errors.first('title') }}" value="{{ originalValues['title'] }}">
+	</div>
+
+	<div class="contactContainer">
+		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Price</label>
+		<input type="text" name="price" class="col-xs-offset-2 col-xs-8" placeholder="{{ errors.first('price') }}">
+	</div>	
+
+	<div class="contactContainer">
+		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Body</label>
+		<textarea name="body" class="col-xs-offset-2 col-xs-8" rows="5" placeholder="{{ errors.first('body') }}"></textarea>
+	</div>
+
+	<div class="contactContainer">
+		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Contact Email</label>
+		<input type="text" name="email" class="col-xs-offset-2 col-xs-8" placeholder="{{ errors.first('email') }}" value="{{ user.email }}">
+	</div>
+
+	<input type="hidden" name="user_id" value="{{ user.id }}">
+
+	<div class="col-xs-12 text-center contactContainer">
+		<button type="submit" class="btn btn-secondary contactButton">Post</button>
+	</div>
+
+	<div class="col-xs-12 text-center">
+		{% flash success %}
+			<h2>{{ message | raw }}</h2>
+		{% endflash %}
+	</div>
+	
+
+</form>
