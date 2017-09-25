@@ -1,4 +1,4 @@
-1506114020a:1:{s:8:"home.htm";a:12:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:4398:"title = "Homepage"
+1506353133a:1:{s:8:"home.htm";a:12:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:4420:"title = "Homepage"
 url = "/"
 layout = "default"
 is_hidden = 0
@@ -90,7 +90,10 @@ sortDirection = "desc"
 
 
 <div class="col-xs-8 postsHolderMain">
-    <div class="col-xs-12 text-center"><h3>Most Recent Posts</h3></div>
+    <div class="col-xs-12 text-center">
+        <h3>Most Recent Posts</h3>
+    </div>
+    
     {% for record in records %}
         <div class="col-xs-12 col-md-6 col-lg-4 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
@@ -124,7 +127,7 @@ sortDirection = "desc"
     {% else %}
         <li class="no-data">{{ noRecordsMessage }}</li>
     {% endfor %}
-</div>";s:5:"mtime";i:1506111168;s:6:"markup";s:3639:"{% set records = builderList.records %}
+</div>";s:5:"mtime";i:1506115936;s:6:"markup";s:3661:"{% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}
 {% set noRecordsMessage = builderList.noRecordsMessage %}
 {% set detailsPage = builderList.detailsPage %}
@@ -183,7 +186,10 @@ sortDirection = "desc"
 
 
 <div class="col-xs-8 postsHolderMain">
-    <div class="col-xs-12 text-center"><h3>Most Recent Posts</h3></div>
+    <div class="col-xs-12 text-center">
+        <h3>Most Recent Posts</h3>
+    </div>
+    
     {% for record in records %}
         <div class="col-xs-12 col-md-6 col-lg-4 text-center postsBody">
             {# Use spaceless tag to remove spaces inside the A tag. #}
