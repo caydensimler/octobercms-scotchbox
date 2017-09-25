@@ -29,13 +29,8 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
         $context["detailsUrlParameter"] = $this->getAttribute(($context["builderList"] ?? null), "detailsUrlParameter", array());
         // line 7
         echo "
-";
-        // line 8
-        $context['__cms_component_params'] = [];
-        echo $this->env->getExtension('CMS')->componentFunction("siteSearchInclude"        , $context['__cms_component_params']        );
-        unset($context['__cms_component_params']);
-        // line 9
-        echo "
+
+
 <div class=\"col-xs-12\">
     ";
         // line 11
@@ -193,7 +188,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
 
     public function getDebugInfo()
     {
-        return array (  181 => 65,  177 => 63,  171 => 61,  169 => 60,  166 => 59,  155 => 56,  150 => 55,  146 => 54,  143 => 53,  137 => 51,  135 => 50,  132 => 49,  130 => 48,  124 => 44,  115 => 42,  107 => 38,  104 => 37,  100 => 35,  98 => 34,  93 => 32,  89 => 30,  83 => 28,  79 => 26,  77 => 25,  70 => 21,  65 => 19,  62 => 18,  56 => 16,  53 => 15,  50 => 14,  47 => 12,  42 => 11,  38 => 9,  34 => 8,  31 => 7,  29 => 6,  27 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  176 => 65,  172 => 63,  166 => 61,  164 => 60,  161 => 59,  150 => 56,  145 => 55,  141 => 54,  138 => 53,  132 => 51,  130 => 50,  127 => 49,  125 => 48,  119 => 44,  110 => 42,  102 => 38,  99 => 37,  95 => 35,  93 => 34,  88 => 32,  84 => 30,  78 => 28,  74 => 26,  72 => 25,  65 => 21,  60 => 19,  57 => 18,  51 => 16,  48 => 15,  45 => 14,  42 => 12,  37 => 11,  31 => 7,  29 => 6,  27 => 5,  25 => 4,  23 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -213,7 +208,7 @@ class __TwigTemplate_3f249eb970da50589b5f072b216cf87cceeb5f247c802b382eb78cf1c8a
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
-{% component 'siteSearchInclude' %}
+
 
 <div class=\"col-xs-12\">
     {% for record in records %}
