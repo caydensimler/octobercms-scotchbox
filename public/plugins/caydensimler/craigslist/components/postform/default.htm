@@ -1,31 +1,32 @@
-<?php var_dump($originalValues); ?>
-
-<form data-request="onSave">
+<form data-request="postform::onSave" data-request-validate data-request-flash>
 
 	<div class="contactContainer">
 		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Title</label>
-		<input type="text" name="title" class="col-xs-offset-2 col-xs-8" placeholder="{{ errors.first('title') }}" value="{{ originalValues['title'] }}">
+		<input type="text" name="title" class="col-xs-offset-2 col-xs-8">
+		<span data-validate-for="title"></span>
 	</div>
 
 	<div class="contactContainer">
 		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Price</label>
-		<input type="text" name="price" class="col-xs-offset-2 col-xs-8" placeholder="{{ errors.first('price') }}">
+		<input type="text" name="price" class="col-xs-offset-2 col-xs-8">
+		<span data-validate-for="price"></span>
 	</div>	
 
 	<div class="contactContainer">
 		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Body</label>
-		<textarea name="body" class="col-xs-offset-2 col-xs-8" rows="5" placeholder="{{ errors.first('body') }}"></textarea>
+		<textarea name="body" class="col-xs-offset-2 col-xs-8" rows="5"></textarea>
+		<span data-validate-for="body"></span>
 	</div>
 
 	<div class="contactContainer">
 		<label class="contactFormHeader col-xs-offset-2 col-xs-8">Contact Email</label>
-		<input type="text" name="email" class="col-xs-offset-2 col-xs-8" placeholder="{{ errors.first('email') }}" value="{{ user.email }}">
+		<input type="text" name="email" class="col-xs-offset-2 col-xs-8" value="{{ user.email }}">
 	</div>
 
 	<input type="hidden" name="user_id" value="{{ user.id }}">
 
 	<div class="col-xs-12 text-center contactContainer">
-		<button type="submit" class="btn btn-secondary contactButton">Post</button>
+		<button type="submit" class="btn btn-secondary contactButton" data-attach-loading>Post</button>
 	</div>
 
 	<div class="col-xs-12 text-center">
@@ -33,6 +34,10 @@
 			<h2>{{ message | raw }}</h2>
 		{% endflash %}
 	</div>
-	
 
+	<div class="alert alert-danger" data-validate-error>
+		<p data-message></p>
+	</div>
+	
 </form>
+

@@ -8,6 +8,7 @@ use Redirect;
 use CaydenSimler\Craigslist\Models\Post;
 use Flash;
 use Eloquent;
+use ValidationException;
 
 class PostForm extends ComponentBase {
 
@@ -36,27 +37,19 @@ class PostForm extends ComponentBase {
 
 	public function onSave() {
 
-		$validator = Validator::make(
-			[
-				'title' => Input::get('title'),
-				'price' => Input::get('price'),
-				'body' => Input::get('body'),
-				'email' => Input::get('email')
-			],
-			[
-				'title' => 'required',
-				'price' => 'required|numeric',
-				'body' => 'required',
-				'email' => 'required|email'
-			]
+		$data = post();
 
-		);
+		$rules = [
+			'title' => 'required',
+			'price' => 'required|numeric',
+			'body' => 'required',
+			'email' => 'required|email'
+		];
+
+		$validator = Validator::make($data, $rules);
 
 		if ($validator->fails()) {
-
-			$originalValues = ['title' => Input::get('title'), 'price' => Input::get('price'), 'body' => Input::get('body'), 'email' => Input::get('email')];
-
-			return Redirect::back()->withErrors($validator)->with('originalValues', $originalValues);
+			throw new ValidationException($validator);
 		} else {
 			$post = new Post();
 
