@@ -59,7 +59,7 @@ pageNumber = "{{ :page }}"
         </div>
         <select class="js-example-basic-multiple contactContainer form-control" name="categories[]" multiple="multiple" data-width="100%">
             {% for record in records %}
-                <option value="{{ record.slug }}">
+                <option value="{{ record.id }}">
                     {{ record.category_title }}
                 </option>
             {% endfor %}

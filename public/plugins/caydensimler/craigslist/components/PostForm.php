@@ -9,6 +9,7 @@ use CaydenSimler\Craigslist\Models\Post;
 use Flash;
 use Eloquent;
 use ValidationException;
+use CaydenSimler\Craigslist\Models\PostCategory;
 
 class PostForm extends ComponentBase {
 
@@ -62,6 +63,15 @@ class PostForm extends ComponentBase {
 			$post->slug = $this->slugify(Input::get('title'));
 
 			$post->save();
+
+			foreach ($_POST['categories'] as $categoryID) {
+				$postCategory = new PostCategory();
+
+				$postCategory->post_id = $post->id;
+				$postCategory->category_id = $categoryID;
+
+				$postCategory->save();
+			}
 
 			$message = 'Post created! Click <a href="/post/' . $post->slug . '">here </a>to view the listing.';
 
