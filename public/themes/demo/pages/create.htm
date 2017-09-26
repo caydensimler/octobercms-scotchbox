@@ -18,4 +18,56 @@ detailsPage = "-"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
 ==
-{% component 'postform' %}
+<form data-request="postform::onSave" data-request-validate data-request-flash>
+
+	<div class="contactContainer col-xs-12">
+		<label class="contactFormHeader col-xs-offset-1 col-xs-10">Title</label>
+		<input type="text" name="title" class="col-xs-offset-1 col-xs-10">
+		<div data-validate-for="title" class="col-xs-offset-1 col-xs-10 formError"></div>
+	</div>
+
+	<div class="contactContainer col-xs-12">
+		<label class="contactFormHeader col-xs-offset-1 col-xs-3">Price</label>
+		<label class="contactFormHeader col-xs-offset-1 col-xs-6">Email</label>
+		<input type="text" name="price" class="col-xs-offset-1 col-xs-3">
+        <input type="text" name="email" class="col-xs-offset-1 col-xs-6" value="{{ user.email }}">
+        <div data-validate-for="price" class="col-xs-offset-1 col-xs-3 formError"></div>
+		<div data-validate-for="email" class="col-xs-offset-1 col-xs-6 formError"></div>
+	</div>	
+
+
+	<div class="contactContainer col-xs-12">
+		<label class="contactFormHeader col-xs-offset-1 col-xs-10">Body</label>
+		<textarea name="body" class="col-xs-offset-1 col-xs-10" rows="5"></textarea>
+		<div data-validate-for="body" class="col-xs-offset-1 col-xs-10 formError"></div>
+	</div>
+
+	<input type="hidden" name="user_id" value="{{ user.id }}">
+
+<!-- Categories!!! -->
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+    <div class="col-xs-offset-1 col-xs-10 contactContainer select2-selection--multiple">
+        <select class="js-example-basic-multiple" name="categories[]" multiple="multiple">
+            {% for record in records %}
+                <option value="{{ record.slug }}">{{ record.category_title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="col-xs-12 text-center contactContainer">
+        <button type="submit" class="btn btn-secondary contactButton" data-attach-loading>Post</button>
+    </div>
+
+    <div class="col-xs-12 text-center">
+        {% flash success %}
+            <h2>{{ message | raw }}</h2>
+        {% endflash %}
+    </div>
+    
+</form>

@@ -1,13 +1,3 @@
-$(document).ready(){
-
-	"use strict";
-
-	
-
-
-
-
-
-
-
-}
+$(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});

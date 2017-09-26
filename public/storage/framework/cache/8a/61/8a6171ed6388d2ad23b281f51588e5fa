@@ -1,4 +1,4 @@
-1506376848a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1731:"description = "Default layout"
+1506440033a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1884:"description = "Default layout"
 
 [session]
 security = "all"
@@ -15,8 +15,8 @@ security = "all"
         <meta name="generator" content="OctoberCMS">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
         <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/select2.css'|theme }}" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
         <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
         {% styles %}
     </head>
@@ -41,11 +41,13 @@ security = "all"
         <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
         <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+        <script src="{{ 'assets/javascript/select2.js'|theme }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
         {% framework extras %}
         {% scripts %}
 
     </body>
-</html>";s:5:"mtime";i:1506368687;s:6:"markup";s:1664:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1506439440;s:6:"markup";s:1817:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -57,8 +59,8 @@ security = "all"
         <meta name="generator" content="OctoberCMS">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
         <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/select2.css'|theme }}" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
         <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
         {% styles %}
     </head>
@@ -83,6 +85,8 @@ security = "all"
         <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
         <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+        <script src="{{ 'assets/javascript/select2.js'|theme }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
         {% framework extras %}
         {% scripts %}
 
