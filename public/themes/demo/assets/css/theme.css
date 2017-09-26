@@ -1,155 +1,133 @@
 
 /* CUSTOM CSS STARTS HERE */
 
-/* Placeholder Text Modification */
-  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-      color: red;
-  }
-  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-     color: red;
-     opacity: .1;
-  }
-  ::-moz-placeholder { /* Mozilla Firefox 19+ */
-     color: red;
-     opacity: .1;
-  }
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-     color: red;
-  }
-  ::-ms-input-placeholder { /* Microsoft Edge */
-     color: red;
-  }
 
 /* Pagination */
 
-  .pagination {
-    background-color: #CFD3D3;
-  }
+	.pagination {
+		background-color: #CFD3D3;
+	}
 
 /* Posts Page */
 
-  .postsBody {
-    background-color: #CFD3D3;
-    border: 20px solid white;
-    padding-bottom: 10px;
-  }
+	.postsBody {
+    	background-color: #CFD3D3;
+    	border: 20px solid white;
+    	padding-bottom: 10px;
+	}
 
-  .postsBody:hover {
-    background-color: #C5C9C9;
-    cursor: pointer;
-  }
+	.postsBody:hover {
+    	background-color: #C5C9C9;
+    	cursor: pointer;
+	}
 
-  .postsDetails {
-    color: black;
-  }
+	.postsDetails {
+    	color: black;
+	}
 
-  .postsHolderMain {
-    max-height: 94vh;
-    overflow-x: auto;
-  }
+	.postsHolderMain {
+    	max-height: 94vh;
+    	overflow-x: auto;
+	}
 
 
-  .fillerImage {
-    width: 200px;
-    height: 200px;
-  }
+	.fillerImage {
+    	width: 200px;
+    	height: 200px;
+	}
 
 /* Single-Post Page */
 
-  .postTitle {
-    font-size: 20px;
-    color: black;
-    border-bottom: 1px solid black;
-  }
+	.postTitle {
+    	font-size: 20px;
+    	color: black;
+    	border-bottom: 1px solid black;
+	}
 
-  .postPrice {
-    font-size: 20px;
-    color: black;
-  }
+	.postPrice {
+    	font-size: 20px;
+    	color: black;
+	}
 
-  .postBody {
-    font-size: 15px;
-    background-color: #CFD3D3;
-  }
+	.postBody {
+    	font-size: 15px;
+    	background-color: #CFD3D3;
+	}
 
-  .postContactBorder {
-    border-top: 1px solid black;
-  }
+	.postContactBorder {
+    	border-top: 1px solid black;
+	}
 
-  .postImageGallery {
-    background-color: #CFD3D3;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+	.postImageGallery {
+    	background-color: #CFD3D3;
+    	padding-top: 40px;
+    	padding-bottom: 40px;
+	}
 
-  .categoryBox {
-    max-height: 200px;
-    overflow-x: auto;
-  }
+	.categoryBox {
+    	max-height: 200px;
+    	overflow-x: auto;
+	}
 
 /* Categories Page */
 
-  .categoriesHolderSidebar {
-    max-height: 94vh;
-    overflow-x: auto;
-    background-color: #CFD3D3;
-  }
+	.categoriesHolderSidebar {
+    	max-height: 94vh;
+    	overflow-x: auto;
+    	background-color: #CFD3D3;
+	}
 
-  .categoriesBody {
-    padding-top: 50px;
-  }
+	.categoriesBody {
+    	padding-top: 50px;
+	}
 
-  .categoriesList {
-    font-size: 17px;
-    padding: 10px;
-  }
+	.categoriesList {
+    	font-size: 17px;
+    	padding: 10px;
+	}
 
 
 /* Contact Form Page */
 
-  .contactFormHeader {
-    margin-top: 10px;
-    font-size: 20px;
-  }
+	.contactFormHeader {
+    	margin-top: 10px;
+    	font-size: 20px;
+	}
 
-  .contactContainer {
-    font-size: 20px;
-    padding-top: 10px;
-  }
+	.contactContainer {
+    	font-size: 20px;
+    	padding-top: 10px;
+	}
 
-  .contactContainerCategories {
-    padding: 50px;
-    font-size: 20px;
-  }
+	.contactContainerCategories {
+    	padding: 50px;
+    	font-size: 20px;
+	}
 
-  .contactButton {
-    font-size: 20px;
-  }
+	.contactButton {
+    	font-size: 20px;
+	}
 
-  .contactButton:hover {
-    background-color: #AAAAAA;
-    border: 1px solid black;
-  }
+	.contactButton:hover {
+    	background-color: #AAAAAA;
+    	border: 1px solid black;
+	}
 
-  .contactPageError {
-    color: red;
-    font-size: 25px;
-  }
+	.contactPageError {
+    	color: red;
+    	font-size: 25px;
+	}
 
-  .categoriesBox {
-    margin-left: 10px !important;
-  }
-
-  .categoriesContainer {
-    margin-top: 25px;
-  }
+	.categoriesContainer {
+    	margin-top: 25px;
+	}
 
 /* Form Error */
   
-  .formError {
-    font-size: 10px;
-    color: red;
-  }
+	.formError {
+    	font-size: 10px;
+    	color: red;
+	}
 
 
 
@@ -614,7 +592,7 @@
 }
 .navbar-default .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li.active > a:after,
 .navbar-default .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li > a:hover:after {
-  background: #64ae5b;
+	background: #64ae5b;
 }
 .navbar-default .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li.active > a:hover:after {
   background: #64ae5b;
