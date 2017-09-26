@@ -21,21 +21,6 @@ class PostForm extends ComponentBase {
 
 	}
 
-
-	static public function slugify($text) {
-		$text = preg_replace('~[^\pL\d]+~u', '-', $text);
-		$text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
-		$text = preg_replace('~[^-\w]+~', '', $text);
-		$text = trim($text, '-');
-		$text = preg_replace('~-+~', '-', $text);
-		$text = strtolower($text);
-		if (empty($text)) {
-			return 'n-a';
-		}
-		return $text;
-	}
-
-
 	public function onSave() {
 
 		$data = post();
@@ -60,11 +45,11 @@ class PostForm extends ComponentBase {
 			$post->contact_email = Input::get('email');
 			$post->created_at = date('Y-m-d H:i:s');
 			$post->user_id = Input::get('user_id');
-			$post->slug = $this->slugify(Input::get('title'));
+			$post->slug = str_slug(Input::get('title'), '-');
 
 			$post->save();
 
-			foreach ($_POST['categories'] as $categoryID) {
+			foreach (Input::get('categories') as $categoryID) {
 				$postCategory = new PostCategory();
 
 				$postCategory->post_id = $post->id;
