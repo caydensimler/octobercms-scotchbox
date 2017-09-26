@@ -136,6 +136,14 @@
     font-size: 25px;
   }
 
+  .categoriesBox {
+    margin-left: 10px !important;
+  }
+
+  .categoriesContainer {
+    margin-top: 25px;
+  }
+
 /* Form Error */
   
   .formError {

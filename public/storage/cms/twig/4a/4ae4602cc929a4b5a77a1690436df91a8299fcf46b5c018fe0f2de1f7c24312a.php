@@ -106,19 +106,23 @@ class __TwigTemplate_751f40d8654b3262698652e51583c6bb51a1edec7628633fa14ef20e322
         echo $this->env->getExtension('Cms\Twig\Extension')->themeFilter("assets/javascript/select2.js");
         echo "\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js\"></script>
+
+        <script type=\"text/javascript\">
+            \$('.js-example-basic-multiple').select2();
+        </script>
         ";
-        // line 41
+        // line 45
         echo '<script src="'. Request::getBasePath()
                 .'/modules/system/assets/js/framework.js"></script>'.PHP_EOL;
         echo '<script src="'. Request::getBasePath()
                     .'/modules/system/assets/js/framework.extras.js"></script>'.PHP_EOL;
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras.css">'.PHP_EOL;
-        // line 42
+        // line 46
         echo "        ";
         echo $this->env->getExtension('CMS')->assetsFunction('js');
         echo $this->env->getExtension('CMS')->displayBlock('scripts');
-        // line 43
+        // line 47
         echo "
     </body>
 </html>";
@@ -136,7 +140,7 @@ class __TwigTemplate_751f40d8654b3262698652e51583c6bb51a1edec7628633fa14ef20e322
 
     public function getDebugInfo()
     {
-        return array (  122 => 43,  118 => 42,  111 => 41,  106 => 39,  102 => 38,  98 => 37,  94 => 36,  89 => 33,  85 => 32,  79 => 28,  77 => 27,  71 => 23,  67 => 22,  60 => 17,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  33 => 7,  29 => 6,  25 => 5,  19 => 1,);
+        return array (  126 => 47,  122 => 46,  115 => 45,  106 => 39,  102 => 38,  98 => 37,  94 => 36,  89 => 33,  85 => 32,  79 => 28,  77 => 27,  71 => 23,  67 => 22,  60 => 17,  57 => 16,  53 => 15,  48 => 13,  44 => 12,  40 => 11,  33 => 7,  29 => 6,  25 => 5,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -189,6 +193,10 @@ class __TwigTemplate_751f40d8654b3262698652e51583c6bb51a1edec7628633fa14ef20e322
         <script src=\"{{ 'assets/javascript/app.js'|theme }}\"></script>
         <script src=\"{{ 'assets/javascript/select2.js'|theme }}\"></script>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js\"></script>
+
+        <script type=\"text/javascript\">
+            \$('.js-example-basic-multiple').select2();
+        </script>
         {% framework extras %}
         {% scripts %}
 

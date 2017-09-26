@@ -1,4 +1,4 @@
-1506440033a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1884:"description = "Default layout"
+1506441525a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:2002:"description = "Default layout"
 
 [session]
 security = "all"
@@ -43,11 +43,15 @@ security = "all"
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
         <script src="{{ 'assets/javascript/select2.js'|theme }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+        <script type="text/javascript">
+            $('.js-example-basic-multiple').select2();
+        </script>
         {% framework extras %}
         {% scripts %}
 
     </body>
-</html>";s:5:"mtime";i:1506439440;s:6:"markup";s:1817:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1506440931;s:6:"markup";s:1935:"<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -87,6 +91,10 @@ security = "all"
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
         <script src="{{ 'assets/javascript/select2.js'|theme }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+        <script type="text/javascript">
+            $('.js-example-basic-multiple').select2();
+        </script>
         {% framework extras %}
         {% scripts %}
 
