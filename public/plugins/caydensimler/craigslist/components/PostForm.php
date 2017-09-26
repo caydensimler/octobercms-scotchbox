@@ -18,7 +18,6 @@ class PostForm extends ComponentBase {
 			'name' => 'Post Form',
 			'description' => 'Create a post form.'
 		];
-
 	}
 
 	public function onSave() {
@@ -39,7 +38,7 @@ class PostForm extends ComponentBase {
 		} else {
 			$post = new Post();
 
-			$post->title = Input::get('title');
+			$post->title = title_case(Input::get('title'));
 			$post->price = Input::get('price');
 			$post->body = '<p>' . Input::get('body') . '</p>';
 			$post->contact_email = Input::get('email');
