@@ -108,12 +108,13 @@
 /* Contact Form Page */
 
   .contactFormHeader {
+    margin-top: 10px;
     font-size: 20px;
   }
 
   .contactContainer {
-    padding: 50px;
-    font-size: 30px;
+    font-size: 20px;
+    padding-top: 10px;
   }
 
   .contactContainerCategories {
